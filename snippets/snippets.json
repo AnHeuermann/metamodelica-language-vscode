@@ -1,10 +1,4 @@
 {
-  "comments": {
-    "prefix": "/*",
-    "body": "/* $1 */",
-    "description": "Modelica comment",
-    "scope": "source.modelica"
-  },
   "block": {
     "prefix": "block",
     "body": "block $1\n\t$2\nend $1;",
@@ -15,6 +9,12 @@
     "prefix": "class",
     "body": "class ${1:ClassName} \"${2:Description}\"\n\t${3}\nend ${1:ClassName};",
     "description": "Modelica class definition",
+    "scope": "source.modelica"
+  },
+  "comments": {
+    "prefix": "/*",
+    "body": "/* $1 */",
+    "description": "Modelica comment",
     "scope": "source.modelica"
   },
   "connect": {
@@ -33,12 +33,6 @@
     "prefix": "for",
     "body": "for $1 in $2:$3 loop\n\t$4\nend for;",
     "description": "Modelica for loop",
-    "scope": "source.modelica"
-  },
-  "while": {
-    "prefix": "while",
-    "body": "while $1 loop\n\t$2\nend while;",
-    "description": "Modelica while loop",
     "scope": "source.modelica"
   },
   "function": {
@@ -75,6 +69,12 @@
     "prefix": "when",
     "body": "when $1 then\n\t$2\nend when;",
     "description": "Modelica when clause",
+    "scope": "source.modelica"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while $1 loop\n\t$2\nend while;",
+    "description": "Modelica while loop",
     "scope": "source.modelica"
   }
 }
