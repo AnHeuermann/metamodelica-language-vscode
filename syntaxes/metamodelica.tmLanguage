@@ -13,12 +13,30 @@
   <key>patterns</key>
   <array>
     <dict>
-      <key>match</key> <string>\b(match|case|end match)\b</string>
+      <key>match</key> <string>\b(matchcontinue|match|local|case|end matchcontinue|end match)\b</string>
       <key>name</key>  <string>keyword.control</string>
     </dict>
     <dict>
       <key>include</key>
       <string>source.modelica</string>
+    </dict>
+    <dict>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key> <string>keyword</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key> <string>entity.name.type</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key> <string>string.quoted.double</string>
+        </dict>
+      </dict>
+      <key>match</key> <string>\b(uniontype)\s+(\w+)\s*(".*")*</string>
     </dict>
   </array>
 

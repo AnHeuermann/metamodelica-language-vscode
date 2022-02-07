@@ -15,7 +15,8 @@
   "keywords": [
     "modelica",
     "language",
-    "metamodelica"
+    "metamodelica",
+    "susan"
   ],
   "homepage": "https://github.com/AnHeuermann/modelica-language-vscode",
   "repository": {
@@ -54,6 +55,12 @@
         "aliases": ["MetaModelica", "metamodelica"],
         "extensions": [".mo"],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "susan",
+        "aliases": ["Susan", "Template"],
+        "extensions": [".tpl"],
+        "configuration": "./language-configuration-susan.json"
       }
     ],
     "grammars": [
@@ -72,6 +79,11 @@
         "injectTo": ["modelica"],
         "scopeName": "source.metamodelica",
         "path": "./syntaxes/metamodelica.tmLanguage"
+      },
+      {
+        "language": "susan",
+        "scopeName": "source.susan",
+        "path": "./syntaxes/susan.tmLanguage"
       }
     ],
     "snippets": [
@@ -81,7 +93,8 @@
       },
       {
         "language": "metamodelica",
-        "path": "./snippets/snippets.json"}
+        "path": "./snippets/snippets.json"
+      }
     ]
   }
 }
