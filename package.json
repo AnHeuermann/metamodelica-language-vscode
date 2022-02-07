@@ -1,9 +1,9 @@
 {
-  "name": "modelica",
-  "displayName": "Modelica",
-  "description": "Modelica language support including syntax highlighting, bracket matching and some useful snippets",
-  "version": "0.0.4",
-  "publisher": "SimplyDanny",
+  "name": "metamodelica",
+  "displayName": "MetaModelica",
+  "description": "Modelica and MetaModelica language support including syntax highlighting, bracket matching and some useful snippets",
+  "version": "0.0.1",
+  "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
     "vscode": "^1.5.0"
@@ -14,15 +14,16 @@
   ],
   "keywords": [
     "modelica",
-    "language"
+    "language",
+    "metamodelica"
   ],
-  "homepage": "https://github.com/SimplyDanny/modelica-language-vscode",
+  "homepage": "https://github.com/AnHeuermann/modelica-language-vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimplyDanny/modelica-language-vscode.git"
+    "url": "https://github.com/AnHeuermann/modelica-language-vscode.git"
   },
   "icon": "images/icon.png",
-  "bugs": "https://github.com/SimplyDanny/modelica-language-vscode/issues",
+  "bugs": "https://github.com/AnHeuermann/modelica-language-vscode/issues",
   "contributes": {
     "languages": [
       {
@@ -47,6 +48,12 @@
           ".mop"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "metamodelica",
+        "aliases": ["MetaModelica", "Meta Modelica"],
+        "extensions": [".mo"],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
@@ -59,13 +66,21 @@
         "language": "optimica",
         "scopeName": "source.optimica",
         "path": "./syntaxes/optimica.tmLanguage"
+      },
+      {
+        "language": "metamodelica",
+        "scopeName": "source.metamodelica",
+        "path": "./syntaces/metamodelica.tmLanguage"
       }
     ],
     "snippets": [
       {
         "language": "modelica",
         "path": "./snippets/snippets.json"
-      }
+      },
+      {
+        "language": "metamodelica",
+        "path": "./snippets/snippets.json"}
     ]
   }
 }

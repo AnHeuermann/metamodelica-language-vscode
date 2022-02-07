@@ -61,7 +61,7 @@
       "end match;"
     ],
     "description": "MetaModelica match expression",
-    "scope": "source.modelica"
+    "scope": "source.metamodelica"
   },
   "model": {
     "prefix": "model",
