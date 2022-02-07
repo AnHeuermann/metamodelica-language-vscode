@@ -47,6 +47,22 @@
     "description": "Modelica: if statement",
     "scope": "source.modelica"
   },
+  "match": {
+    "prefix": "match",
+    "body": [
+      "match ${1:variable}",
+      "\tcase ${4:matchExpression()}",
+      "\t\talgorithm",
+      "\t\t\t${0://Your code here}",
+      "\telse",
+      "\t\talgorithm",
+      "\t\t\tError.assertion(false, getInstanceName() + \" unhandled match case\", sourceInfo());",
+      "\t\tthen fail();",
+      "end match;"
+    ],
+    "description": "MetaModelica match expression",
+    "scope": "source.modelica"
+  },
   "model": {
     "prefix": "model",
     "body": "model $1 \"${2:Description}\"\n\t$3\nend $1;",
