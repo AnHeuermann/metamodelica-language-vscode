@@ -1,8 +1,8 @@
 {
   "name": "metamodelica",
   "displayName": "MetaModelica",
-  "description": "Modelica and MetaModelica language support including syntax highlighting, bracket matching and some useful snippets",
-  "version": "0.0.1",
+  "description": "MetaModelica, Susan and Modelica language support.",
+  "version": "0.1.0",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
@@ -23,7 +23,7 @@
     "type": "git",
     "url": "https://github.com/AnHeuermann/modelica-language-vscode.git"
   },
-  "icon": "images/icon.png",
+  "icon": "images/Modelica_Language_marging.jpg",
   "bugs": "https://github.com/AnHeuermann/modelica-language-vscode/issues",
   "contributes": {
     "languages": [
