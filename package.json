@@ -1,9 +1,9 @@
 {
-  "name": "modelica",
-  "displayName": "Modelica",
-  "description": "Modelica language support including syntax highlighting, bracket matching and some useful snippets",
-  "version": "0.0.4",
-  "publisher": "SimplyDanny",
+  "name": "metamodelica",
+  "displayName": "MetaModelica",
+  "description": "MetaModelica, Susan and Modelica language support.",
+  "version": "0.1.0",
+  "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
     "vscode": "^1.5.0"
@@ -14,15 +14,17 @@
   ],
   "keywords": [
     "modelica",
-    "language"
+    "language",
+    "metamodelica",
+    "susan"
   ],
-  "homepage": "https://github.com/SimplyDanny/modelica-language-vscode",
+  "homepage": "https://github.com/AnHeuermann/modelica-language-vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimplyDanny/modelica-language-vscode.git"
+    "url": "https://github.com/AnHeuermann/modelica-language-vscode.git"
   },
-  "icon": "images/icon.png",
-  "bugs": "https://github.com/SimplyDanny/modelica-language-vscode/issues",
+  "icon": "images/Modelica_Language_marging.jpg",
+  "bugs": "https://github.com/AnHeuermann/modelica-language-vscode/issues",
   "contributes": {
     "languages": [
       {
@@ -47,6 +49,18 @@
           ".mop"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "metamodelica",
+        "aliases": ["MetaModelica", "metamodelica"],
+        "extensions": [".mo"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "susan",
+        "aliases": ["Susan", "Template"],
+        "extensions": [".tpl"],
+        "configuration": "./language-configuration-susan.json"
       }
     ],
     "grammars": [
@@ -59,11 +73,26 @@
         "language": "optimica",
         "scopeName": "source.optimica",
         "path": "./syntaxes/optimica.tmLanguage"
+      },
+      {
+        "language": "metamodelica",
+        "injectTo": ["modelica"],
+        "scopeName": "source.metamodelica",
+        "path": "./syntaxes/metamodelica.tmLanguage"
+      },
+      {
+        "language": "susan",
+        "scopeName": "source.susan",
+        "path": "./syntaxes/susan.tmLanguage"
       }
     ],
     "snippets": [
       {
         "language": "modelica",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "metamodelica",
         "path": "./snippets/snippets.json"
       }
     ]
