@@ -10,9 +10,13 @@ This extension is based on the Modelica extension taken from [SimplyDanny/modeli
 
 ## Features
 
-### Colorization
+### Syntax Highlighting
 
-![colorization](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/colorization.png)
+![Modelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/modelica.png)
+
+![MetaModelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/metamodelica.png)
+
+![Modelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/susan-template.png)
 
 ### Snippets
 
