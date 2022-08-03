@@ -1,3 +1,5 @@
+[![Build Extension](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/createPackage.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/createPackage.yml)
+
 # MetaModelica and Susan in Visual Studio Code
 
 This extension adds support for the Modelica, Optimica, MetaModelica and Susan languages to Visual Studio Code.
@@ -28,8 +30,10 @@ This extension is based on the Modelica extension taken from [SimplyDanny/modeli
 
 ### Install the extension in VS Code
 
-* Open the command palette using `Ctrl+Shift+P`.
-* Type `ext install MetaModelica` in the command palette.
+* Download the [VS Code extension file](https://github.com/AnHeuermann/modelica-language-vscode/releases/tag/v0.1.0).
+* Open the command palette using `Ctrl+Shift+P` or `F1`.
+* Type `extensions: Install from VSIX...` in the command palette.
+* Browse to downloaded *.vsix file.
 
 ### Select MetaModelica as a language
 
