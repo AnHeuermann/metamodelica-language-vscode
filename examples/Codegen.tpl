@@ -5,7 +5,7 @@ template someTemplateFunction(Text message, Context context, builtin.SourceInfo 
     <<
     void foo() {
       FILE_INFO info = {<%infoArgs(info)%>};
-      printf("<%message%>\n");
+      printf("<%message%>\"\n");
     }
     >>
   else
