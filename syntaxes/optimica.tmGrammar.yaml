@@ -1,0 +1,26 @@
+fileTypes:
+  - mop
+name: Optimica
+
+patterns:
+  # Storage
+  - begin: \b(list<|Option<|tuple<)\b
+    end: '>'
+    name: storage.type
+  
+  # Keywords
+  - match: \bconstraint\b
+    name: keyword.control
+
+  # Captures
+  - captures:
+      1:
+        name: meta.function
+      2:
+        name: keyword
+      3:
+        name: entity.name.type
+    match: \b(optimization)\b\s+((extends\s+)?([_\w][_\w\d]*|'[^"].*')(\s+extends)?)
+
+  - include: source.modelica
+scopeName: source.optimica
