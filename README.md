@@ -28,9 +28,9 @@ This extension is based on the Modelica extension taken from
 
 ### Snippets
 
-![snippets-editor](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/snippets-editor.png)
+![snippets-editor](./images/snippets-editor.png)
 
-![snippets-command-palette](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/snippets-command-palette.png)
+![snippets-command-palette](./images/snippets-command-palette.png)
 
 ## Usage
 
