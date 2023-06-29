@@ -69,10 +69,12 @@ Use the provided dev container to build and publish the extension. See
 
 Generate .vsix pacakge file:
 ```bash
-vsce package
+npx vsce package
 ```
 
-Publish package:
-```bash
+### Publish package
 
+```bash
+npx vsce login <publisher name>
+npx vsce publish
 ```
