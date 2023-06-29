@@ -2,11 +2,11 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "MetaModelica, Susan and Modelica language support.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.79.0"
   },
   "categories": [
     "Programming Languages",
@@ -34,8 +34,7 @@
           "modelica"
         ],
         "extensions": [
-          ".mo",
-          ".mos"
+          ".mo"
         ],
         "configuration": "./language-configuration.json"
       },
@@ -52,38 +51,63 @@
       },
       {
         "id": "metamodelica",
-        "aliases": ["MetaModelica", "metamodelica"],
-        "extensions": [".mo"],
+        "aliases": [
+          "MetaModelica",
+          "metamodelica"
+        ],
+        "extensions": [
+          ".mo"
+        ],
         "configuration": "./language-configuration.json"
       },
       {
         "id": "susan",
-        "aliases": ["Susan", "Template"],
-        "extensions": [".tpl"],
+        "aliases": [
+          "Susan",
+          "Template"
+        ],
+        "extensions": [
+          ".tpl"
+        ],
         "configuration": "./language-configuration-susan.json"
+      },
+      {
+        "id": "openmodelica-script",
+        "aliases": [
+          "OpenModelica Script",
+          "OpenModelica Scripting"
+        ],
+        "extensions": [
+          ".mos"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "modelica",
         "scopeName": "source.modelica",
-        "path": "./syntaxes/modelica.tmLanguage"
+        "path": "./syntaxes/modelica.tmGrammar.json"
       },
       {
         "language": "optimica",
         "scopeName": "source.optimica",
-        "path": "./syntaxes/optimica.tmLanguage"
+        "path": "./syntaxes/optimica.tmGrammar.json"
       },
       {
         "language": "metamodelica",
-        "injectTo": ["modelica"],
         "scopeName": "source.metamodelica",
-        "path": "./syntaxes/metamodelica.tmLanguage"
+        "path": "./syntaxes/metamodelica.tmGrammar.json"
       },
       {
         "language": "susan",
         "scopeName": "source.susan",
-        "path": "./syntaxes/susan.tmLanguage"
+        "path": "./syntaxes/susan.tmGrammar.json"
+      },
+      {
+        "language": "openmodelica-script",
+        "scopeName": "source.openmodelica-script",
+        "path": "./syntaxes/script.tmGrammar.json"
       }
     ],
     "snippets": [
@@ -96,5 +120,13 @@
         "path": "./snippets/snippets.json"
       }
     ]
+  },
+  "scripts": {
+    "prebuild": "sh yaml2json.sh",
+    "build": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.19.0",
+    "js-yaml": "^4.1.0"
   }
 }

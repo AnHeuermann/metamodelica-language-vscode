@@ -18,11 +18,13 @@ This extension is based on the Modelica extension taken from
 
 ### Syntax Highlighting
 
-![Modelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/modelica.png)
+![Modelica](./images/modelica.png)
 
-![MetaModelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/metamodelica.png)
+![MetaModelica](./images/metamodelica.png)
 
-![Modelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/master/images/susan-template.png)
+![Susan](./images/susan-template.png)
+
+![OpenModelica Scripting](./images/scripting.png)
 
 ### Snippets
 
