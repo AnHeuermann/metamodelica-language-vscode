@@ -18,19 +18,19 @@ This extension is based on the Modelica extension taken from
 
 ### Syntax Highlighting
 
-![Modelica](./images/modelica.png)
+![Modelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/modelica.png)
 
-![MetaModelica](./images/metamodelica.png)
+![MetaModelica](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/metamodelica.png)
 
-![Susan](./images/susan-template.png)
+![Susan](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/susan-template.png)
 
-![OpenModelica Scripting](./images/scripting.png)
+![OpenModelica Scripting](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/scripting.png)
 
 ### Snippets
 
-![snippets-editor](./images/snippets-editor.png)
+![snippets-editor](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/snippets-editor.png)
 
-![snippets-command-palette](./images/snippets-command-palette.png)
+![snippets-command-palette](https://github.com/AnHeuermann/modelica-language-vscode/raw/main/images/snippets-command-palette.png)
 
 ## Usage
 
