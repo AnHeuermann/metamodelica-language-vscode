@@ -10,30 +10,49 @@ patterns:
   - match: (//).*$\n?
     name: comment.line
 
+  # Constants
+  - match: \b(true|false)\b
+    name: constant.language
+  - match: \b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b
+    name: constant.numeric
+
+  # Strings
+  - include: '#strings'
+
   - match: \b(\w+)\b\([\w]+[,\s*\w+]*\)
     captures:
       1:
         name: entity.name.function
 
   - include: '#stringModelicaInput'
+  - include: '#api-functions'
 
 repository:
-  stringModelicaInput:
+  strings:
     patterns:
       - begin: \"
         end: \"
-        name: string.quoted.double
+        name: string.interpolated
+        patterns:
+          - include: '#escapes'
 
-      - begin: '(loadString)\((\")'
-        beginCapture:
-          0:
-            - name: entity.name.function
+  escapes:
+    match: '\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)'
+    name: constant.character.escape
+
+  stringModelicaInput:
+    patterns:
+      - begin: \b(loadString)\b\((\")
+        beginCaptures:
           1:
-            - name: string.quoted.double
-        end: '(\")\);'
+            name: support.function
+          2:
+            name: string.quoted.double
+        end: (\")\)
         endCaptures:
-          0:
-            - name: string.quoted.double
+          1:
+            name: string.quoted.double
+        #contentName: string.quoted.double
         patterns:
           - include: '#modelica'
 
@@ -115,5 +134,676 @@ repository:
         captures:
           1:
             name: string.quoted.double
+
+  api-functions:
+    patterns:
+      - match: \b(oms_getVersion)\b
+        name: support.function
+      - match: \b(oms_terminate)\b
+        name: support.function
+      - match: \b(oms_stepUntil)\b
+        name: support.function
+      - match: \b(oms_simulate)\b
+        name: support.function
+      - match: \b(oms_setWorkingDirectory)\b
+        name: support.function
+      - match: \b(oms_setVariableStepSize)\b
+        name: support.function
+      - match: \b(oms_setTolerance)\b
+        name: support.function
+      - match: \b(oms_setTLMSocketData)\b
+        name: support.function
+      - match: \b(oms_setTLMPositionAndOrientation)\b
+        name: support.function
+      - match: \b(oms_setTempDirectory)\b
+        name: support.function
+      - match: \b(oms_setStopTime)\b
+        name: support.function
+      - match: \b(oms_setStartTime)\b
+        name: support.function
+      - match: \b(oms_setSignalFilter)\b
+        name: support.function
+      - match: \b(oms_setResultFile)\b
+        name: support.function
+      - match: \b(oms_setRealInputDerivative)\b
+        name: support.function
+      - match: \b(oms_setReal)\b
+        name: support.function
+      - match: \b(oms_setLoggingLevel)\b
+        name: support.function
+      - match: \b(oms_setLoggingInterval)\b
+        name: support.function
+      - match: \b(oms_setLogFile)\b
+        name: support.function
+      - match: \b(oms_setInteger)\b
+        name: support.function
+      - match: \b(oms_setFixedStepSize)\b
+        name: support.function
+      - match: \b(oms_setCommandLineOption)\b
+        name: support.function
+      - match: \b(oms_setBoolean)\b
+        name: support.function
+      - match: \b(oms_RunFile)\b
+        name: support.function
+      - match: \b(oms_reset)\b
+        name: support.function
+      - match: \b(oms_rename)\b
+        name: support.function
+      - match: \b(oms_removeSignalsFromResults)\b
+        name: support.function
+      - match: \b(oms_newModel)\b
+        name: support.function
+      - match: \b(oms_loadSnapshot)\b
+        name: support.function
+      - match: \b(oms_listUnconnectedConnectors)\b
+        name: support.function
+      - match: \b(oms_list)\b
+        name: support.function
+      - match: \b(oms_instantiate)\b
+        name: support.function
+      - match: \b(oms_initialize)\b
+        name: support.function
+      - match: \b(oms_importSnapshot)\b
+        name: support.function
+      - match: \b(oms_importFile)\b
+        name: support.function
+      - match: \b(oms_getVariableStepSize)\b
+        name: support.function
+      - match: \b(oms_getTolerance)\b
+        name: support.function
+      - match: \b(oms_getSystemType)\b
+        name: support.function
+      - match: \b(oms_getSubModelPath)\b
+        name: support.function
+      - match: \b(oms_getStopTime)\b
+        name: support.function
+      - match: \b(oms_getStartTime)\b
+        name: support.function
+      - match: \b(oms_getSolver)\b
+        name: support.function
+      - match: \b(oms_getReal)\b
+        name: support.function
+      - match: \b(oms_getModelState)\b
+        name: support.function
+      - match: \b(oms_getInteger)\b
+        name: support.function
+      - match: \b(oms_getFixedStepSize)\b
+        name: support.function
+      - match: \b(oms_getBoolean)\b
+        name: support.function
+      - match: \b(oms_extractFMIKind)\b
+        name: support.function
+      - match: \b(oms_exportSnapshot)\b
+        name: support.function
+      - match: \b(oms_exportDependencyGraphs)\b
+        name: support.function
+      - match: \b(oms_export)\b
+        name: support.function
+      - match: \b(oms_deleteConnectorFromTLMBus)\b
+        name: support.function
+      - match: \b(oms_deleteConnectorFromBus)\b
+        name: support.function
+      - match: \b(oms_deleteConnection)\b
+        name: support.function
+      - match: \b(oms_delete)\b
+        name: support.function
+      - match: \b(oms_copySystem)\b
+        name: support.function
+      - match: \b(oms_compareSimulationResults)\b
+        name: support.function
+      - match: \b(oms_addTLMConnection)\b
+        name: support.function
+      - match: \b(oms_addTimeIndicator)\b
+        name: support.function
+      - match: \b(oms_addSubModel)\b
+        name: support.function
+      - match: \b(oms_addStaticValueIndicator)\b
+        name: support.function
+      - match: \b(oms_addSignalsToResults)\b
+        name: support.function
+      - match: \b(oms_addExternalModel)\b
+        name: support.function
+      - match: \b(oms_addEventIndicator)\b
+        name: support.function
+      - match: \b(oms_addDynamicValueIndicator)\b
+        name: support.function
+      - match: \b(oms_addConnectorToTLMBus)\b
+        name: support.function
+      - match: \b(oms_addConnectorToBus)\b
+        name: support.function
+      - match: \b(oms_addConnection)\b
+        name: support.function
+      - match: \b(oms_addBus)\b
+        name: support.function
+      - match: \b(unloadOMSimulator)\b
+        name: support.function
+      - match: \b(loadOMSimulator)\b
+        name: support.function
+      - match: \b(qualifyPath)\b
+        name: support.function
+      - match: \b(restoreAST)\b
+        name: support.function
+      - match: \b(storeAST)\b
+        name: support.function
+      - match: \b(modifierToJSON)\b
+        name: support.function
+      - match: \b(getModelInstanceIcon)\b
+        name: support.function
+      - match: \b(getModelInstance)\b
+        name: support.function
+      - match: \b(convertPackageToLibrary)\b
+        name: support.function
+      - match: \b(runConversionScript)\b
+        name: support.function
+      - match: \b(generateScriptingAPI)\b
+        name: support.function
+      - match: \b(deleteInitialState)\b
+        name: support.function
+      - match: \b(getInitialStates)\b
+        name: support.function
+      - match: \b(deleteTransition)\b
+        name: support.function
+      - match: \b(getTransitions)\b
+        name: support.function
+      - match: \b(getClassInformation)\b
+        name: support.function
+      - match: \b(sortStrings)\b
+        name: support.function
+      - match: \b(checkInterfaceOfPackages)\b
+        name: support.function
+      - match: \b(GC_set_max_heap_size)\b
+        name: support.function
+      - match: \b(GC_expand_hp)\b
+        name: support.function
+      - match: \b(GC_gcollect_and_unmap)\b
+        name: support.function
+      - match: \b(getMemorySize)\b
+        name: support.function
+      - match: \b(threadWorkFailed)\b
+        name: support.function
+      - match: \b(exit)\b
+        name: support.function
+      - match: \b(runScriptParallel)\b
+        name: support.function
+      - match: \b(numProcessors)\b
+        name: support.function
+      - match: \b(generateEntryPoint)\b
+        name: support.function
+      - match: \b(getDerivedClassModifierValue)\b
+        name: support.function
+      - match: \b(getDerivedClassModifierNames)\b
+        name: support.function
+      - match: \b(getConversionsFromVersions)\b
+        name: support.function
+      - match: \b(getUses)\b
+        name: support.function
+      - match: \b(getAvailablePackageConversionsFrom)\b
+        name: support.function
+      - match: \b(getAvailablePackageConversionsTo)\b
+        name: support.function
+      - match: \b(getAvailablePackageVersions)\b
+        name: support.function
+      - match: \b(upgradeInstalledPackages)\b
+        name: support.function
+      - match: \b(updatePackageIndex)\b
+        name: support.function
+      - match: \b(installPackage)\b
+        name: support.function
+      - match: \b(getAvailableLibraryVersions)\b
+        name: support.function
+      - match: \b(getAvailableLibraries)\b
+        name: support.function
+      - match: \b(searchClassNames)\b
+        name: support.function
+      - match: \b(extendsFrom)\b
+        name: support.function
+      - match: \b(getBooleanClassAnnotation)\b
+        name: support.function
+      - match: \b(classAnnotationExists)\b
+        name: support.function
+      - match: \b(getAnnotationModifierValue)\b
+        name: support.function
+      - match: \b(getAnnotationNamedModifiers)\b
+        name: support.function
+      - match: \b(getSimulationOptions)\b
+        name: support.function
+      - match: \b(isExperiment)\b
+        name: support.function
+      - match: \b(getInheritedClasses)\b
+        name: support.function
+      - match: \b(getBuiltinType)\b
+        name: support.function
+      - match: \b(isProtectedClass)\b
+        name: support.function
+      - match: \b(isOperatorFunction)\b
+        name: support.function
+      - match: \b(isOperatorRecord)\b
+        name: support.function
+      - match: \b(isOperator)\b
+        name: support.function
+      - match: \b(isEnumeration)\b
+        name: support.function
+      - match: \b(isOptimization)\b
+        name: support.function
+      - match: \b(isConnector)\b
+        name: support.function
+      - match: \b(isModel)\b
+        name: support.function
+      - match: \b(isRedeclare)\b
+        name: support.function
+      - match: \b(isReplaceable)\b
+        name: support.function
+      - match: \b(isPartial)\b
+        name: support.function
+      - match: \b(isFunction)\b
+        name: support.function
+      - match: \b(isBlock)\b
+        name: support.function
+      - match: \b(isRecord)\b
+        name: support.function
+      - match: \b(isClass)\b
+        name: support.function
+      - match: \b(isPackage)\b
+        name: support.function
+      - match: \b(isType)\b
+        name: support.function
+      - match: \b(getClassRestriction)\b
+        name: support.function
+      - match: \b(basename)\b
+        name: support.function
+      - match: \b(dirname)\b
+        name: support.function
+      - match: \b(getClassComment)\b
+        name: support.function
+      - match: \b(typeNameStrings)\b
+        name: support.function
+      - match: \b(typeNameString)\b
+        name: support.function
+      - match: \b(stringTypeName)\b
+        name: support.function
+      - match: \b(getTimeStamp)\b
+        name: support.function
+      - match: \b(setDocumentationAnnotation)\b
+        name: support.function
+      - match: \b(getDocumentationAnnotation)\b
+        name: support.function
+      - match: \b(iconv)\b
+        name: support.function
+      - match: \b(getNthImport)\b
+        name: support.function
+      - match: \b(getImportedNames)\b
+        name: support.function
+      - match: \b(getMMfileTotalDependencies)\b
+        name: support.function
+      - match: \b(getImportCount)\b
+        name: support.function
+      - match: \b(getNthAnnotationString)\b
+        name: support.function
+      - match: \b(getAnnotationCount)\b
+        name: support.function
+      - match: \b(getNthInitialEquationItem)\b
+        name: support.function
+      - match: \b(getInitialEquationItemsCount)\b
+        name: support.function
+      - match: \b(getNthEquationItem)\b
+        name: support.function
+      - match: \b(getEquationItemsCount)\b
+        name: support.function
+      - match: \b(getNthInitialEquation)\b
+        name: support.function
+      - match: \b(getInitialEquationCount)\b
+        name: support.function
+      - match: \b(getNthEquation)\b
+        name: support.function
+      - match: \b(getEquationCount)\b
+        name: support.function
+      - match: \b(getNthInitialAlgorithmItem)\b
+        name: support.function
+      - match: \b(getInitialAlgorithmItemsCount)\b
+        name: support.function
+      - match: \b(getNthAlgorithmItem)\b
+        name: support.function
+      - match: \b(getAlgorithmItemsCount)\b
+        name: support.function
+      - match: \b(getNthInitialAlgorithm)\b
+        name: support.function
+      - match: \b(getInitialAlgorithmCount)\b
+        name: support.function
+      - match: \b(getNthAlgorithm)\b
+        name: support.function
+      - match: \b(getAlgorithmCount)\b
+        name: support.function
+      - match: \b(getConnectionList)\b
+        name: support.function
+      - match: \b(getNthConnection)\b
+        name: support.function
+      - match: \b(getConnectionCount)\b
+        name: support.function
+      - match: \b(updateConnectionNames)\b
+        name: support.function
+      - match: \b(updateConnectionAnnotation)\b
+        name: support.function
+      - match: \b(removeExtendsModifiers)\b
+        name: support.function
+      - match: \b(getInstantiatedParametersAndValues)\b
+        name: support.function
+      - match: \b(removeElementModifiers)\b
+        name: support.function
+      - match: \b(getElementModifierValues)\b
+        name: support.function
+      - match: \b(getElementModifierValue)\b
+        name: support.function
+      - match: \b(getElementModifierNames)\b
+        name: support.function
+      - match: \b(removeComponentModifiers)\b
+        name: support.function
+      - match: \b(getComponentModifierValues)\b
+        name: support.function
+      - match: \b(getComponentModifierValue)\b
+        name: support.function
+      - match: \b(getComponentModifierNames)\b
+        name: support.function
+      - match: \b(getParameterValue)\b
+        name: support.function
+      - match: \b(getParameterNames)\b
+        name: support.function
+      - match: \b(closeSimulationResultFile)\b
+        name: support.function
+      - match: \b(checkCodeGraph)\b
+        name: support.function
+      - match: \b(checkTaskGraph)\b
+        name: support.function
+      - match: \b(diffSimulationResultsHtml)\b
+        name: support.function
+      - match: \b(diffSimulationResults)\b
+        name: support.function
+      - match: \b(deltaSimulationResults)\b
+        name: support.function
+      - match: \b(compareSimulationResults)\b
+        name: support.function
+      - match: \b(filterSimulationResults)\b
+        name: support.function
+      - match: \b(readSimulationResultVars)\b
+        name: support.function
+      - match: \b(readSimulationResultSize)\b
+        name: support.function
+      - match: \b(plotAll)\b
+        name: support.function
+      - match: \b(getAllSubtypeOf)\b
+        name: support.function
+      - match: \b(getPackages)\b
+        name: support.function
+      - match: \b(getUsedClassNames)\b
+        name: support.function
+      - match: \b(getClassNames)\b
+        name: support.function
+      - match: \b(setClassComment)\b
+        name: support.function
+      - match: \b(isShortDefinition)\b
+        name: support.function
+      - match: \b(setSourceFile)\b
+        name: support.function
+      - match: \b(getSourceFile)\b
+        name: support.function
+      - match: \b(copyClass)\b
+        name: support.function
+      - match: \b(moveClassToBottom)\b
+        name: support.function
+      - match: \b(moveClassToTop)\b
+        name: support.function
+      - match: \b(moveClass)\b
+        name: support.function
+      - match: \b(reduceTerms)\b
+        name: support.function
+      - match: \b(buildLabel)\b
+        name: support.function
+      - match: \b(buildEncryptedPackage)\b
+        name: support.function
+      - match: \b(buildModelFMU)\b
+        name: support.function
+      - match: \b(translateModelFMU)\b
+        name: support.function
+      - match: \b(importFMUModelDescription)\b
+        name: support.function
+      - match: \b(importFMU)\b
+        name: support.function
+      - match: \b(solveLinearSystem)\b
+        name: support.function
+      - match: \b(getLoadedLibraries)\b
+        name: support.function
+      - match: \b(uriToFilename)\b
+        name: support.function
+      - match: \b(realpath)\b
+        name: support.function
+      - match: \b(rewriteBlockCall)\b
+        name: support.function
+      - match: \b(generateVerificationScenarios)\b
+        name: support.function
+      - match: \b(inferBindings)\b
+        name: support.function
+      - match: \b(exportToFigaro)\b
+        name: support.function
+      - match: \b(listFile)\b
+        name: support.function
+      - match: \b(stringReplace)\b
+        name: support.function
+      - match: \b(stringSplit)\b
+        name: support.function
+      - match: \b(strtok)\b
+        name: support.function
+      - match: \b(listVariables)\b
+        name: support.function
+      - match: \b(getDerivedUnits)\b
+        name: support.function
+      - match: \b(convertUnits)\b
+        name: support.function
+      - match: \b(dumpXMLDAE)\b
+        name: support.function
+      - match: \b(translateGraphics)\b
+        name: support.function
+      - match: \b(save)\b
+        name: support.function
+      - match: \b(saveTotalModelDebug)\b
+        name: support.function
+      - match: \b(saveTotalModel)\b
+        name: support.function
+      - match: \b(saveModel)\b
+        name: support.function
+      - match: \b(deleteFile)\b
+        name: support.function
+      - match: \b(loadModel)\b
+        name: support.function
+      - match: \b(generateCode)\b
+        name: support.function
+      - match: \b(instantiateModel)\b
+        name: support.function
+      - match: \b(checkAllModelsRecursive)\b
+        name: support.function
+      - match: \b(checkModel)\b
+        name: support.function
+      - match: \b(remove)\b
+        name: support.function
+      - match: \b(copy)\b
+        name: support.function
+      - match: \b(mkdir)\b
+        name: support.function
+      - match: \b(cd)\b
+        name: support.function
+      - match: \b(getAstAsCorbaString)\b
+        name: support.function
+      - match: \b(getLanguageStandard)\b
+        name: support.function
+      - match: \b(getOrderConnections)\b
+        name: support.function
+      - match: \b(getShowAnnotations)\b
+        name: support.function
+      - match: \b(setShowAnnotations)\b
+        name: support.function
+      - match: \b(getDefaultOpenCLDevice)\b
+        name: support.function
+      - match: \b(getVectorizationLimit)\b
+        name: support.function
+      - match: \b(setNoSimplify)\b
+        name: support.function
+      - match: \b(getNoSimplify)\b
+        name: support.function
+      - match: \b(getAnnotationVersion)\b
+        name: support.function
+      - match: \b(getClassesInModelicaPath)\b
+        name: support.function
+      - match: \b(echo)\b
+        name: support.function
+      - match: \b(runScript)\b
+        name: support.function
+      - match: \b(clearMessages)\b
+        name: support.function
+      - match: \b(countMessages)\b
+        name: support.function
+      - match: \b(getMessagesString)\b
+        name: support.function
+      - match: \b(getErrorString)\b
+        name: support.function
+      - match: \b(readFileNoNumeric)\b
+        name: support.function
+      - match: \b(alarm)\b
+        name: support.function
+      - match: \b(compareFiles)\b
+        name: support.function
+      - match: \b(compareFilesAndMove)\b
+        name: support.function
+      - match: \b(writeFile)\b
+        name: support.function
+      - match: \b(readFile)\b
+        name: support.function
+      - match: \b(stat)\b
+        name: support.function
+      - match: \b(directoryExists)\b
+        name: support.function
+      - match: \b(regularFileExists)\b
+        name: support.function
+      - match: \b(getVersion)\b
+        name: support.function
+      - match: \b(clearCommandLineOptions)\b
+        name: support.function
+      - match: \b(getConfigFlagValidOptions)\b
+        name: support.function
+      - match: \b(getCommandLineOptions)\b
+        name: support.function
+      - match: \b(setCommandLineOptions)\b
+        name: support.function
+      - match: \b(getAvailableTearingMethods)\b
+        name: support.function
+      - match: \b(getTearingMethod)\b
+        name: support.function
+      - match: \b(getAvailableIndexReductionMethods)\b
+        name: support.function
+      - match: \b(getIndexReductionMethod)\b
+        name: support.function
+      - match: \b(getAvailableMatchingAlgorithms)\b
+        name: support.function
+      - match: \b(getMatchingAlgorithm)\b
+        name: support.function
+      - match: \b(clearDebugFlags)\b
+        name: support.function
+      - match: \b(disableNewInstantiation)\b
+        name: support.function
+      - match: \b(enableNewInstantiation)\b
+        name: support.function
+      - match: \b(setCompilerFlags)\b
+        name: support.function
+      - match: \b(getHomeDirectoryPath)\b
+        name: support.function
+      - match: \b(getModelicaPath)\b
+        name: support.function
+      - match: \b(setModelicaPath)\b
+        name: support.function
+      - match: \b(getInstallationDirectoryPath)\b
+        name: support.function
+      - match: \b(setInstallationDirectoryPath)\b
+        name: support.function
+      - match: \b(setEnvironmentVar)\b
+        name: support.function
+      - match: \b(getEnvironmentVar)\b
+        name: support.function
+      - match: \b(getTempDirectoryPath)\b
+        name: support.function
+      - match: \b(setTempDirectoryPath)\b
+        name: support.function
+      - match: \b(setPlotCommand)\b
+        name: support.function
+      - match: \b(setCompileCommand)\b
+        name: support.function
+      - match: \b(getCompileCommand)\b
+        name: support.function
+      - match: \b(setCompilerPath)\b
+        name: support.function
+      - match: \b(verifyCompiler)\b
+        name: support.function
+      - match: \b(setCXXCompiler)\b
+        name: support.function
+      - match: \b(getCXXCompiler)\b
+        name: support.function
+      - match: \b(getCFlags)\b
+        name: support.function
+      - match: \b(setCFlags)\b
+        name: support.function
+      - match: \b(setCompiler)\b
+        name: support.function
+      - match: \b(getCompiler)\b
+        name: support.function
+      - match: \b(setLinkerFlags)\b
+        name: support.function
+      - match: \b(getLinkerFlags)\b
+        name: support.function
+      - match: \b(setLinker)\b
+        name: support.function
+      - match: \b(getLinker)\b
+        name: support.function
+      - match: \b(generateSeparateCodeDependenciesMakefile)\b
+        name: support.function
+      - match: \b(generateSeparateCodeDependencies)\b
+        name: support.function
+      - match: \b(generateSeparateCode)\b
+        name: support.function
+      - match: \b(generateJuliaHeader)\b
+        name: support.function
+      - match: \b(generateHeader)\b
+        name: support.function
+      - match: \b(clearVariables)\b
+        name: support.function
+      - match: \b(clearProgram)\b
+        name: support.function
+      - match: \b(clear)\b
+        name: support.function
+      - match: \b(help)\b
+        name: support.function
+      - match: \b(saveAll)\b
+        name: support.function
+      - match: \b(system_parallel)\b
+        name: support.function
+      - match: \b(system)\b
+        name: support.function
+      - match: \b(loadFileInteractive)\b
+        name: support.function
+      - match: \b(loadFileInteractiveQualified)\b
+        name: support.function
+      - match: \b(parseFile)\b
+        name: support.function
+      - match: \b(parseString)\b
+        name: support.function
+      - match: \b(loadString)\b
+        name: support.function
+      - match: \b(reloadClass)\b
+        name: support.function
+      - match: \b(loadEncryptedPackage)\b
+        name: support.function
+      - match: \b(parseEncryptedPackage)\b
+        name: support.function
+      - match: \b(loadFiles)\b
+        name: support.function
+      - match: \b(loadFile)\b
+        name: support.function
+      - match: \b(simulate)\b
+        name: support.function
 
 scopeName: source.openmodelica-script

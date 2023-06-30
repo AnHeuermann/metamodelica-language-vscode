@@ -1,0 +1,139 @@
+{
+  "API function getErrorString": {
+    "prefix": "getErrorString",
+    "body": "getErrorString();",
+    "scope": "source.openmodelica-script"
+  },
+
+  "Minimal Working Example": {
+    "prefix": "loadModel",
+    "body": [
+      "loadModel(Modelica, {\"4.0\"}); getErrorString();",
+      "loadString(\"",
+      "  model M",
+      "    $1",
+      "  end M;",
+      "\"); getErrorString();",
+      "simulate(M); getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function simulate (full)": {
+    "prefix": "simulate",
+    "body": [
+      "simulate($1,",
+      "         startTime = 0.0,",
+      "         stopTime = 1.0,",
+      "         numberOfIntervals = 500",
+      "         tolerance = 1e-6",
+      "         method = \"dassl\"",
+      "         fileNamePrefix = \"<default>\"",
+      "         options = \"\"",
+      "         outputFormat = \"mat\"",
+      "         variableFilter = \".*\"",
+      "         cflags = \"\"",
+      "         simflags = \"<default>\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function simulate": {
+    "prefix": "simulate",
+    "body": [
+      "simulate($1);",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function buildModel (full)": {
+    "prefix": "buildModel",
+    "body": [
+      "buildModel($1,",
+      "           startTime = \"<default>\",",
+      "           stopTime = 1.0,",
+      "           numberOfIntervals = 500,",
+      "           tolerance = 1e-6,",
+      "           method = \"dassl\",",
+      "           fileNamePrefix = \"<default>\",",
+      "           options = \"<default>\",",
+      "           outputFormat = \"mat\",",
+      "           variableFilter = \".*\",",
+      "           cflags = \"<default>\",",
+      "           simflags = \"<default>\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function buildModel": {
+    "prefix": "buildModel",
+    "body": [
+      "buildModel($1);",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function buildModelFMU (full)": {
+    "prefix": "buildModelFMU",
+    "body": [
+      "buildModelFMU($1",
+      "              version = \"2.0\",",
+      "              fmuType = \"me\"",
+      "              fileNamePrefix = \"<default>\",",
+      "              platforms = {\"static\"},",
+      "              includeResources = false);",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function buildModelFMU": {
+    "prefix": "buildModelFMU",
+    "body": [
+      "buildModelFMU($1);",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function loadFile": {
+    "prefix": "loadFile",
+    "body": [
+      "loadFile(\"$1\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function loadModel (full)": {
+    "prefix": "loadModel",
+    "body": [
+      "loadModel($1,",
+      "          priorityVersion = {\"default\"});",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function loadModel": {
+    "prefix": "loadModel",
+    "body": [
+      "loadModel($1, {\"$2\"});",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function setCommandLineOptions": {
+    "prefix": "setCommandLineOptions",
+    "body": [
+      "setCommandLineOptions(\"$1\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  }
+}
