@@ -5,11 +5,7 @@ name: Susan
 
 patterns:
   # Comments
-  - begin: /\*
-    end: \*/
-    name: comment.block
-  - match: (//).*$\n?
-    name: comment.line
+  - include: "#comments"
 
   # Constants
   - match: \b(true|false)\b
@@ -18,13 +14,9 @@ patterns:
     name: constant.numeric
 
   # Storage
-  - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
-    name: storage.type
+  - include: '#types'
   - match: \b(constant|final|parameter|expandable|replaceable|redeclare|constrainedby|import|flow|stream|discrete|connector)\b
     name: storage.modifier
-  - begin: \b(list<|Option<|tuple<)\b
-    end: '>'
-    name: storage.type
   - match: \b(uniontype)\s+(\w+)\s*(".*")*
     captures:
       1:
@@ -35,7 +27,7 @@ patterns:
         name: string.quoted.double
 
   # Keywords
-  - match: ::=|\|\>|=\>
+  - match: \|\>|=\>
     name: keyword.control
   - match: \=|\+\=
     name: keyword.operator.assignment
@@ -51,22 +43,30 @@ patterns:
     name: storage.modifier
 
   # Block definitions
-  - match: (\b(template)\b\s+\w+\s*(".*")*)
-    captures:
-      1:
+  - begin: \b(template)\b
+    beginCaptures:
+      - name: keyword
+    end: "::="
+    endCaptures:
+      - name: keyword.control
+    patterns:
+      - match: \b(\w+)\b\(
         name: entity.name.function
-      2:
-        name: keyword
-      3:
-        name: comment.line
-  - match: \b(end)\b(\s+\w+\s*);
-    captures:
-      1:
-        name: keyword
-      2:
-        name: entity.name.function
+      - begin: '\('
+        end: '\)'
+        name: keyword 
+      - include: '#comments'
+      - include: '#types'
 
-  # Function calls
+      - begin: '(?<!\\)"'
+        end: '(?<!\\)"'
+        name: comment.block
+  - match: \b(end)\b\s+(\w+)\s*;
+    captures:
+      1:
+        name: keyword
+      2:
+        name: entity.name.function
   - match: \b(package)\s+(\w+)\s*(".*")*
     captures:
       1:
@@ -75,6 +75,8 @@ patterns:
         name: entity.name.type
       3:
         name: string.quoted.double
+
+  # Function calls
   - match: \b(\w+)\b\([\w]+[,\s*\w+]*\)
     captures:
       1:
@@ -92,6 +94,22 @@ patterns:
   - include: '#strings'
 
 repository:
+  comments:
+    patterns:
+      - begin: /\*
+        end: \*/
+        name: comment.block
+      - match: (//).*$\n?
+        name: comment.line
+
+  types:
+    patterns:
+    - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
+      name: storage.type
+    - begin: \b(list<|Option<|tuple<)\b
+      end: '>'
+      name: storage.type
+
   strings:
     patterns:
       - begin: '<<'
