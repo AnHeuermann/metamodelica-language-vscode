@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to the "MetaModelica" extension will be documented in this file.
 
+## [1.1.0] - 2023-06-30
+
+  - MOS script snippets
+  - MOS script API functions highlighting
+  - Fixed string escapes
+
 ## [1.0.0] - 2023-06-29
 
   - Fixed syntax highlighting for Susan template language

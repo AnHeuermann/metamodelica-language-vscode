@@ -67,7 +67,7 @@ possible snippets to choose from.
 Use the provided dev container to build and publish the extension. See
 [https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation](code.visualstudio.com/api/working-with-extensions/publishing-extension).
 
-Generate .vsix pacakge file:
+Generate .vsix package file:
 ```bash
 npx vsce package
 ```

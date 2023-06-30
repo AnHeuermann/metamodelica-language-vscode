@@ -2,7 +2,7 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "MetaModelica, Susan and Modelica language support.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
@@ -118,6 +118,10 @@
       {
         "language": "metamodelica",
         "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "openmodelica-script",
+        "path": "./snippets/snippets_script.json"
       }
     ]
   },
