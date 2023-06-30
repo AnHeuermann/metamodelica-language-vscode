@@ -1,5 +1,12 @@
 name: Create MetaModelica VS Code Extension
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - main
+    tags:
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
