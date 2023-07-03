@@ -559,6 +559,8 @@ repository:
         name: support.function
       - match: \b(buildEncryptedPackage)\b
         name: support.function
+      - match: \b(buildModel)\b
+        name: support.function
       - match: \b(buildModelFMU)\b
         name: support.function
       - match: \b(translateModelFMU)\b
