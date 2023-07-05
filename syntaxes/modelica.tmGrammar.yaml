@@ -68,8 +68,8 @@ patterns:
         name: comment.line
 
   # Strings
-  - begin: '(?<!\\)"'
-    end: '(?<!\\)"'
+  - begin: \"
+    end: \"
     name: string.quoted.double
     patterns:
       - include: "#escapes"
