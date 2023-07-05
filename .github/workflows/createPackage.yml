@@ -23,7 +23,7 @@ jobs:
       - name: Build package
         run: npm run build
       - name: Archive vsix package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: metamodelica.vsix
           path: metamodelica-*.vsix
