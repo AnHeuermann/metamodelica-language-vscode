@@ -33,7 +33,7 @@ patterns:
     name: keyword.operator.assignment
   - match: \b(hasindex|separator|as)\b
     name: keyword.control
-  - match: \b(match|case|then|end match)\b
+  - match: \b(match|case|then|else|end match)\b
     name: keyword.control
 
   # Storage
