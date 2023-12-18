@@ -20,14 +20,14 @@ patterns:
     name: storage.type
   - match: \b(constant|final|parameter|expandable|replaceable|redeclare|constrainedby|import|flow|stream|discrete|connector)\b
     name: storage.modifier
-  
+
   # Keywords
   - match: \b\s*([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)([.]([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)?)++\b
     name: keyword
-  - match: \b(for|if|when|while|then|loop|end if|end when|end for|end while|else|elsewhen|and|break|return|each|elseif|input|output)\b
+  - match: \b(for|if|when|while|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
     name: keyword.control
   - match: \b(and|or|not)\b
-    name: keyword.operator.logical
+    name: keyword.control
   - match: <|<\=|>|>\=|\=\=|<>
     name: keyword.operator.comparison
   - match: \+|\-|\.\+|\.\-|\*|\.\*|/|\./|\^
