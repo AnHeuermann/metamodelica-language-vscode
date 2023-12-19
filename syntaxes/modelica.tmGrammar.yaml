@@ -58,21 +58,29 @@ patterns:
         name: entity.name.type
       3:
         name: comment.line
-  - match: ((function)\s+\w+\s*(".*")*)
+  - match: \b(function)\s+(\w+)\s*(".*")*
     captures:
       1:
-        name: entity.name.function
-      2:
         name: keyword
+      2:
+        name: entity.name.function
       3:
         name: comment.line
+
+  # Annotations
+  - begin: \b(annotation)\b
+    beginCaptures:
+      - name: keyword
+    end: \)\s*;
+    patterns:
+      - include: '#annotations'
 
   # Strings
   - begin: \"
     end: \"
     name: string.quoted.double
     patterns:
-      - include: "#escapes"
+      - include: '#escapes'
   - match: '["\w\)\]](\s+"[^"]*"\s*);'
     captures:
       1:
@@ -82,5 +90,23 @@ repository:
   escapes:
     match: '\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)'
     name: constant.character.escape
+
+  annotations:
+    patterns:
+      - match: \b(Evaluate|version|versionDate|dateModified|HideResult|singleInstance|mustBeConnected|mayOnlyConnectOnce|Inline|LateInline)\b
+        name: keyword
+      - begin: \b(experiment)\b\s*\(
+        beginCaptures:
+          - name: keyword
+        end: \)
+        patterns:
+          - include: '#experiment'
+      - include: "source.modelica"
+
+  experiment:
+    patterns:
+      - match: \b(StartTime|StopTime|Interval|Tolerance)\b
+        name: keyword
+      - include: "source.modelica"
 
 scopeName: source.modelica
