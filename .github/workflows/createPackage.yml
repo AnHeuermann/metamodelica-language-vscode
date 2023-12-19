@@ -43,7 +43,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            metamodelica.vsix
+            metamodelica-*.vsix
           fail_on_unmatched_files: true
           generate_release_notes: true
           append_body: true
