@@ -9,11 +9,6 @@ by
 SimplyDanny](https://marketplace.visualstudio.com/items?itemName=SimplyDanny.modelica)
 which is the base for this extensions.
 
-## Source
-
-This extension is based on the Modelica extension
-[SimplyDanny/modelica-language-vscode](https://github.com/SimplyDanny/modelica-language-vscode).
-
 ## Features
 
 ### Syntax Highlighting
@@ -104,12 +99,25 @@ npm run test
 
 Generate .vsix package file:
 ```bash
-npx vsce package
+npm run build
 ```
 
 ### Publish package
+
+**Visual Studio Marketplace**
 
 ```bash
 npx vsce login <publisher name>
 npx vsce publish
 ```
+
+**Open VSX**
+
+```bash
+npx ovsx publish metamodelica-<version>.vsix -p <token>
+```
+
+## Acknowledgement
+
+This extension is based on the Modelica extension
+[SimplyDanny/modelica-language-vscode](https://github.com/SimplyDanny/modelica-language-vscode).
