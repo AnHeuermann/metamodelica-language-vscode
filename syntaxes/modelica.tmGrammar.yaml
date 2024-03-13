@@ -68,6 +68,10 @@ patterns:
     patterns:
       - include: "source.modelica"
 
+  # Function calls
+  - match: \b([\w|\.]+)\b\(
+    name: entity.name.function
+
   # Annotations
   - begin: \b(annotation)\b
     beginCaptures:

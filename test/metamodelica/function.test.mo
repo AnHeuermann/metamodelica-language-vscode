@@ -23,6 +23,7 @@ algorithm
 //  ^^^^ keyword.control
 //          ^^^^^^^^^ source.metamodelica keyword
       Error.addMessage(Error.INTERNAL_ERROR,{getInstanceName() + " failed."});
+//    ^^^^^^^^^^^^^^^^ source.metamodelica entity.name.function
 //                                           ^^^^^^^^^^^^^^^ source.metamodelica support.function.special
 //                                                               ^^^^^^^^^^ source.metamodelica string.quoted.double
     then ();

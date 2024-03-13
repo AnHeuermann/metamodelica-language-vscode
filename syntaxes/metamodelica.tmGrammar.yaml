@@ -37,8 +37,6 @@ patterns:
         name: string.quoted.double
 
   # Keywords
-  - match: \b\s*([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)([.]([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)?)++\b
-    name: keyword
   - match: \b(for|if|when|while|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
     name: keyword.control
   - match: \b(and|or|not)\b
@@ -83,6 +81,10 @@ patterns:
         name: entity.name.type
     patterns:
       - include: "source.metamodelica"
+
+  # Function calls
+  - match: \b([\w|\.]+)\b\(
+    name: entity.name.function
 
   # Annotations
   - begin: \b(annotation)\b
