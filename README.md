@@ -81,6 +81,7 @@ npm install
 ```
 
 Translate the `*tmGrammar.yaml` files to `*.tmGrammar.json` JSON files.
+Start build task (Ctrl+Shift+B)
 
 ```bash
 npm run prebuild
@@ -96,7 +97,7 @@ Run the `tmGrammer tests` task:
 or run it manually:
 
 ```bash
-npx vscode-tmgrammar-test test/**/*.test.*
+npm run test
 ```
 
 ### Build Package

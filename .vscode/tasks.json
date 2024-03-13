@@ -4,7 +4,17 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "npm",
+      "script": "prebuild"
+    },
+    {
       "label": "tmGrammar tests",
+      "dependsOn": ["Build"],
       "type": "shell",
       "command": "npx vscode-tmgrammar-test -c 'test/**/*.test.*'",
       "group": "test",
