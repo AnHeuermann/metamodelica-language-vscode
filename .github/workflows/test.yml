@@ -27,6 +27,12 @@ jobs:
       - name: Translate grammar to JSON
         run: npm run prebuild
 
+      - name: Archive tmGrammar files
+        uses: actions/upload-artifact@v4
+        with:
+          name: tmGrammar.json
+          path: syntaxes/*.tmGrammar.json
+
       - name: Run Test
         run: npm run test
 
@@ -40,6 +46,29 @@ jobs:
         with:
           name: metamodelica.vsix
           path: metamodelica-*.vsix
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Download tmGrammar files
+        uses: actions/download-artifact@v4
+        with:
+          name: tmGrammar.json
+
+      - name: Run Test
+        run: npm run test
 
   release:
     if: startsWith(github.ref, 'refs/tags/')
