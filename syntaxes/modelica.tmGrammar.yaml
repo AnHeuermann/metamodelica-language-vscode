@@ -50,7 +50,7 @@ patterns:
     name: support.type
 
   # Class definitions
-  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*(".*")*
+  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*((?<!\\)"([^"]*|\\")*(?<!\\)")?
     beginCaptures:
       1:
         name: keyword
