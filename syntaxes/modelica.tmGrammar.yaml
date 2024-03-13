@@ -1,6 +1,7 @@
 fileTypes:
   - mo
 name: Modelica
+
 patterns:
   # Comments
   - begin: /\*
@@ -34,7 +35,7 @@ patterns:
     name: keyword.operator.arithmetic
   - match: \=|\:\=
     name: keyword.operator.assignment
-  - match: \b(algorithm|equation|initial algorithm|initial equation|protected|public|end|pure|impure|external|encapsulated|in|inner|operator|outer)\b
+  - match: \b(algorithm|equation|protected|public|end|external|in)\b
     name: keyword
 
   # Support
