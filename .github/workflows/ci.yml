@@ -75,11 +75,23 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
       - uses: actions/download-artifact@v4
         with:
           name: metamodelica.vsix
 
       - name: Release
+        if: always()
         uses: softprops/action-gh-release@v2
         with:
           files: |
@@ -87,3 +99,13 @@ jobs:
           fail_on_unmatched_files: true
           generate_release_notes: true
           append_body: true
+
+      - name: Publish to Visual Studio Marketplace
+        if: always()
+        run: |
+          npx vsce publish -i $(ls metamodelica-*.vsix) -p ${{ secrets.VSCE_PAT }}
+
+      - name: Publish to Open VSX
+        if: always()
+        run: |
+          npx ovsx publish $(ls metamodelica-*.vsix) -p ${{ secrets.OPEN_VSX_TOKEN }}

@@ -109,7 +109,15 @@ npx vsce package
 
 ### Publish package
 
+**Visual Studio Marketplace**
+
 ```bash
 npx vsce login <publisher name>
 npx vsce publish
+```
+
+**Open VSX**
+
+```bash
+npx ovsx publish metamodelica-<version>.vsix -p <token>
 ```
