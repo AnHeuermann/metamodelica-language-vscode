@@ -1,4 +1,4 @@
-[![Test](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/test.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/test.yml)
+[![Test](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml)
 
 # MetaModelica and Susan in Visual Studio Code
 
