@@ -1,8 +1,8 @@
 // SYNTAX TEST "source.modelica" "Class"
 
-model M
+model MyModel
 //<---keyword
-//    ^ entity.name.type
-end M;
+//    ^^^^^^^ entity.name.type
+end MyModel;
 //<---keyword
-//  ^ entity.name.type
+//  ^^^^^^^ entity.name.type
