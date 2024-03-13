@@ -76,15 +76,15 @@ patterns:
       - include: '#annotations'
 
   # Strings
+  - match: (?<![=+]\s*)((?<!\\)"([^"]*|\\")*(?<!\\)")\s*;
+    captures:
+      1:
+        name: comment.line
   - begin: \"
     end: \"
     name: string.quoted.double
     patterns:
       - include: '#escapes'
-  - match: '["\w\)\]](\s+"[^"]*"\s*);'
-    captures:
-      1:
-        name: comment.line
 
 repository:
   escapes:
