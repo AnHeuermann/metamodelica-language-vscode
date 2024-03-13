@@ -49,23 +49,23 @@ patterns:
   - match: \b(extends|partial|within)\b
     name: support.type
 
-  # Block definitions
-  - match: \b(model|class|record|block|package)\s+(\w+)\s*(".*")*
-    captures:
+  # Class definitions
+  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*(".*")*
+    beginCaptures:
       1:
         name: keyword
       2:
         name: entity.name.type
       3:
         name: comment.line
-  - match: \b(function)\s+(\w+)\s*(".*")*
-    captures:
+    end: \b(end)\s+(\2)\s*;
+    endCaptures:
       1:
         name: keyword
       2:
-        name: entity.name.function
-      3:
-        name: comment.line
+        name: entity.name.type
+    patterns:
+      - include: "source.modelica"
 
   # Annotations
   - begin: \b(annotation)\b
