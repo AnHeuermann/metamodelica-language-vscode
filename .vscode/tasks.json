@@ -20,7 +20,7 @@
       "group": "test",
       "presentation": {
         "reveal": "always",
-        "panel": "new",
+        "panel": "dedicated",
       },
       "problemMatcher": {
         "owner": "vscode-tmgrammar-test",

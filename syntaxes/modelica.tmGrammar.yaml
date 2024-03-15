@@ -85,6 +85,8 @@ patterns:
     captures:
       1:
         name: comment.line
+
+  # Strings
   - begin: \"
     end: \"
     name: string.quoted.double
