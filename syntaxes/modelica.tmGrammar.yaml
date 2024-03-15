@@ -80,7 +80,7 @@ patterns:
     patterns:
       - include: '#annotations'
 
-  # Strings
+  # Documentation Strings
   - match: (?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
     captures:
       1:
