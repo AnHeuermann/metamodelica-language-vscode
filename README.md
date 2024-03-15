@@ -75,7 +75,7 @@ for more details on the publishing process.
 npm install
 ```
 
-Translate the `*tmGrammar.yaml` files to `*.tmGrammar.json` JSON files.
+Translate the `*.tmGrammar.yaml` files to `*.tmGrammar.json` JSON files.
 Start build task (Ctrl+Shift+B)
 
 ```bash

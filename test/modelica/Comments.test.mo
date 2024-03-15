@@ -1,6 +1,8 @@
 // SYNTAX TEST "source.modelica" "Comments"
 
 model M "Documentation"
+//<-- source.modelica keyword
+//    ^ source.modelica entity.name.type
 //      ^^^^^^^^^^^^^^^ source.modelica comment.line
   Real x "Variable \"x\"";
 //       ^^^^^^^^^^^^^^^^ source.modelica comment.line
@@ -28,3 +30,5 @@ model M "Documentation"
 //           ^^^ source.modelica string.quoted.double
 //                 ^^^ source.modelica string.quoted.double
 end M;
+//<-- source.modelica keyword
+//  ^ source.modelica entity.name.type
