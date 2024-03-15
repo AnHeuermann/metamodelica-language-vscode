@@ -51,7 +51,7 @@ patterns:
     name: support.type
 
   # Class definitions
-  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*((?<!\\)"([^"]|\\")*(?<!\\)")?
+  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*("([^"]|\\")*(?<!\\)")?
     beginCaptures:
       1:
         name: keyword
@@ -69,7 +69,7 @@ patterns:
       - include: "source.modelica"
 
   # Function calls
-  - match: \b([\w|\.]+)\b\(
+  - match: \b(?<!\.)(\w|\w+[\.\w+]*\w)s*\(
     name: entity.name.function
 
   # Annotations
@@ -102,7 +102,7 @@ repository:
     patterns:
       - match: \b(Evaluate|version|versionDate|dateModified|HideResult|singleInstance|mustBeConnected|mayOnlyConnectOnce|Inline|LateInline)\b
         name: keyword
-      - begin: \b(experiment)\b\s*\(
+      - begin: \b(experiment)\s*\(
         beginCaptures:
           - name: keyword
         end: \)
