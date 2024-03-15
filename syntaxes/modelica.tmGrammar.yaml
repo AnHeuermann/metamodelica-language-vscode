@@ -51,7 +51,7 @@ patterns:
     name: support.type
 
   # Class definitions
-  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*((?<!\\)"([^"]*|\\")*(?<!\\)")?
+  - begin: \b(model|class|record|block|package|function)\s+(\w+)\s*((?<!\\)"([^"]|\\")*(?<!\\)")?
     beginCaptures:
       1:
         name: keyword
@@ -81,7 +81,7 @@ patterns:
       - include: '#annotations'
 
   # Strings
-  - match: (?<![=+]\s*)((?<!\\)"([^"]*|\\")*(?<!\\)")\s*;
+  - match: (?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
     captures:
       1:
         name: comment.line
