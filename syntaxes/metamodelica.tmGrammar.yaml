@@ -67,7 +67,7 @@ patterns:
     name: keyword.operator.arithmetic
   - match: \=|\:\=
     name: keyword.operator.assignment
-  - match: \b(algorithm|equation|protected|public|end|external|in)\b
+  - match: \b(algorithm|equation|protected|public|end|external|in|encapsulated)\b
     name: keyword
   - match: \b(matchcontinue|match|local|case|try|end matchcontinue|end match|end try)\b
     name: keyword.control
@@ -85,7 +85,8 @@ patterns:
     name: support.type
 
   # Class Type
-  - begin: \b(record|type|package|function|uniontype)\s+(\w+)\s*((?<!\\)"([^"]*|\\")*(?<!\\)")?
+  #- begin: \b(record|type|package|function|uniontype)\s+(\w+)\s*((?<!\\)"([^"]|\\")*(?<!\\)")?
+  - begin: \b(record|type|package|function|uniontype)\s+(\w+)\s*("([^"]|\\")*(?<!\\)")?
     beginCaptures:
       1:
         name: keyword
@@ -132,10 +133,10 @@ repository:
 
   enumeration:
     patterns:
-      - match: \b(\w+)\b\s*((?<!\\)"([^"]*|\\")*(?<!\\)")?
+      - match: \b(\w+)\s*("([^"]|\\")*(?<!\\)")?
         captures:
           1:
-            name: entity.name.type
+            name: variable.other.enummember
           2:
             name: comment.line
       - include: "source.modelica"

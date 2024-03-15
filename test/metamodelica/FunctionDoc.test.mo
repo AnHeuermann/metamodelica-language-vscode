@@ -13,3 +13,13 @@ public function foo
 //       ^^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica storage.type
 // [...]
 end foo;
+
+function bar"I'm a comment"
+//          ^^^^^^^^^^^^^^^ source.metamodelica comment.line
+end bar;
+
+function f "Does a thing, but must be shorter than this string.
+author: Author name  TUD-2015-04"
+  input BackendDAE.Equation eq;
+//^^^^^ source.metamodelica keyword.control
+end f;
