@@ -85,7 +85,6 @@ patterns:
     name: support.type
 
   # Class Type
-  #- begin: \b(record|type|package|function|uniontype)\s+(\w+)\s*((?<!\\)"([^"]|\\")*(?<!\\)")?
   - begin: \b(record|type|package|function|uniontype)\s+(\w+)\s*("([^"]|\\")*(?<!\\)")?
     beginCaptures:
       1:
