@@ -26,6 +26,16 @@ patterns:
     patterns:
       - include: '#enumeration'
 
+  ## Type declaration
+  - match: \b(type)\b\s+\b(\w+)\b\s+(=)
+    captures:
+      1:
+        name: storage.type
+      2:
+        name: entity.name.type
+      3:
+        name: keyword.operator.assignment
+
   - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
     name: storage.type
 

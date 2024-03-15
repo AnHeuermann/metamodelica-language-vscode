@@ -12,9 +12,9 @@ model M "Documentation"
 //                    ^^^^^^^^^^^^^ source.modelica comment.line
   String z2 = "hello";
 //            ^^^^^^^ source.modelica string.quoted.double
-  Foo foo(x=1) "Variable foo";
-//    ^^^ source.modelica entity.name.function
-//             ^^^^^^^^^^^^^^ source.modelica comment.line
+  Foo f = foo(x=1) "Variable foo";
+//        ^^^ source.modelica entity.name.function
+//                 ^^^^^^^^^^^^^^ source.modelica comment.line
   Real a = foo("hello") "Function foo";
 //         ^^^ source.modelica entity.name.function
 //             ^^^^^^^ source.modelica string.quoted.double
