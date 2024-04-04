@@ -18,11 +18,14 @@ patterns:
 
   # Storage
   ## Enumeration
-  - begin: \b(enumeration)\b\s*\(
+  - begin: \b(enumeration)\s*\(
     beginCaptures:
       1:
         name: storage.type.enumeration
-    end: \)\s*;
+    end: \)\s*("([^"]|\\")*(?<!\\)")?\s*;
+    endCaptures:
+      1:
+        name: comment.line
     patterns:
       - include: '#enumeration'
 

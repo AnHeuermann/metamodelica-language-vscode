@@ -17,9 +17,9 @@ type FavouriteMinionFood = enumeration(
   PAPAYA  "Wikipedia tells me the fruit is a berry. I don't agree."
 //^^^^^^ source.metamodelica variable.other.enummember
 //        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica comment.line
-);
-
-type FavouriteMinionFood = enumeration(BANANA "A banana", APPLE "An apple", GELATO "Ice-cream from the italian \"gelato\"", PAPAYA "Wikipedia tells me the fruit is a berry. I don't agree.");
+) "No mushrooms here";
+//^^^^^^^^^^^^^^^^^^^ source.metamodelica comment.line
+type FavouriteMinionFood = enumeration(BANANA "A banana", APPLE "An apple", GELATO "Ice-cream from the italian \"gelato\"", PAPAYA "Wikipedia tells me the fruit is a berry. I don't agree.") "No mushrooms here" ;
 //<--- source.metamodelica storage.type
 //   ^^^^^^^^^^^^^^^^^^^ source.metamodelica entity.name.type
 //                       ^ source.metamodelica keyword.operator.assignment
@@ -32,3 +32,4 @@ type FavouriteMinionFood = enumeration(BANANA "A banana", APPLE "An apple", GELA
 //                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica comment.line
 //                                                                                                                          ^^^^^^ source.metamodelica variable.other.enummember
 //                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica comment.line
+//                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^ source.metamodelica comment.line
