@@ -47,7 +47,7 @@ patterns:
     name: storage.modifier
   - match: \b(replaceable|redeclare|import)\b
     name: storage.modifier
-  - begin: \b(list<|Option<|tuple<)\b
+  - begin: \b(list|tuple|array|Option)<
     end: '>'
     name: storage.type
   - match: \b(uniontype)\s+(\w+)\s*(".*")*
