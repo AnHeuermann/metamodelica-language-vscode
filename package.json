@@ -131,7 +131,7 @@
     "test": "vscode-tmgrammar-test test/**/*.test.*"
   },
   "devDependencies": {
-    "@vscode/vsce": "^2.21.1",
+    "@vscode/vsce": "^2.26.0",
     "js-yaml": "^4.1.0",
     "ovsx": "^0.9.0",
     "vscode-tmgrammar-test": "^0.1.3"
