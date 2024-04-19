@@ -33,7 +33,7 @@ algorithm
 //       ^^^^^^^^^ source.metamodelica keyword
       for xi in x loop
 //    ^^^ source.metamodelica keyword.control
-//           ^^ source.metamodelica keyword
+//           ^^ source.metamodelica keyword.control
 //                ^^^^ source.metamodelica keyword.control
         y := xi::y;
 //        ^^ source.metamodelica keyword.operator.assignment

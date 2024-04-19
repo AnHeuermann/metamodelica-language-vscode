@@ -60,7 +60,7 @@ patterns:
         name: string.quoted.double
 
   # Keywords
-  - match: \b(for|if|when|while|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
+  - match: \b(for|if|when|while|in|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
     name: keyword.control
   - match: \b(and|or|not)\b
     name: keyword.control
@@ -70,7 +70,7 @@ patterns:
     name: keyword.operator.arithmetic
   - match: \=|\:\=
     name: keyword.operator.assignment
-  - match: \b(algorithm|equation|protected|public|end|external|in|encapsulated)\b
+  - match: \b(algorithm|equation|protected|public|end|external|encapsulated)\b
     name: keyword
   - match: \b(matchcontinue|match|local|case|try|end matchcontinue|end match|end try)\b
     name: keyword.control
