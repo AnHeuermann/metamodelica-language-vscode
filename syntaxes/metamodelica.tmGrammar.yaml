@@ -62,6 +62,8 @@ patterns:
   # Keywords
   - match: \b(for|if|when|while|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
     name: keyword.control
+  - match: \b(matchcontinue|match|local|case|try|end matchcontinue|end match|end try)\b
+    name: keyword.control
   - match: \b(and|or|not)\b
     name: keyword.control
   - match: <|<\=|>|>\=|\=\=|<>
@@ -72,8 +74,6 @@ patterns:
     name: keyword.operator.assignment
   - match: \b(algorithm|equation|protected|public|end|external|in|encapsulated)\b
     name: keyword
-  - match: \b(matchcontinue|match|local|case|try|end matchcontinue|end match|end try)\b
-    name: keyword.control
 
   # Support
   - match: \b(acos|asin|atan|atan2|cos|cosh|exp|log|log10|sin|sinh|tan|tanh|abs|sign|sqrt|max|min|product|sum)\b

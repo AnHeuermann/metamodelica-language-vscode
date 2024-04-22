@@ -42,7 +42,7 @@ algorithm
     then ();
 //  ^^^^ source.metamodelica keyword.control
   end match;
-//^^^ source.metamodelica keyword
+//^^^ source.metamodelica keyword.control
 //    ^^^^ source.metamodelica keyword.control
 end myMetaModelicaFunction;
 //<--- source.metamodelica keyword
