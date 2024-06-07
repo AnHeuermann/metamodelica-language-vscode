@@ -81,7 +81,7 @@ patterns:
       - include: '#annotations'
 
   # Documentation Strings
-  - match: (?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
+  - match: (?<!else\s*)(?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
     captures:
       1:
         name: comment.line

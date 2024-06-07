@@ -29,6 +29,13 @@ model M "Documentation"
   String w = "a" + "b";
 //           ^^^ source.modelica string.quoted.double
 //                 ^^^ source.modelica string.quoted.double
+  String s = if true then "yes" else "no" "doc";
+//                        ^^^^^ source.modelica string.quoted.double
+//                                   ^^^^ source.modelica string.quoted.double
+//                                        ^^^^^ source.modelica comment.line
+  String t = if false then "yes" else "no";
+//                         ^^^^^ source.modelica string.quoted.double
+//                                    ^^^^ source.modelica string.quoted.double
 end M;
 //<-- source.modelica keyword
 //  ^ source.modelica entity.name.type
