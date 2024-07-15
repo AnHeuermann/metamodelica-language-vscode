@@ -120,7 +120,7 @@ patterns:
     end: \)\s*;
 
   # Documentation Strings
-  - match: (?<!else\s*)(?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
+  - match: (?<!\bthen\s*)(?<!\belse\s*)(?<![=+]\s*)((?<!\\)"([^"]|\\")*(?<!\\)")\s*;
     captures:
       1:
         name: comment.line
