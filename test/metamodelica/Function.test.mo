@@ -19,9 +19,10 @@ algorithm
 //  ^^^^^ keyword.control
       Real yi;
 //    ^^^^ source.metamodelica storage.type
-    case {} algorithm
+    case {} guard true algorithm
 //  ^^^^ keyword.control
-//          ^^^^^^^^^ source.metamodelica keyword
+//          ^^^^^ keyword.control
+//                     ^^^^^^^^^ source.metamodelica keyword
       Error.addMessage(Error.INTERNAL_ERROR, {getInstanceName() + " failed."});
 //    ^^^^^^^^^^^^^^^^ source.metamodelica entity.name.function
 //                                            ^^^^^^^^^^^^^^^ source.metamodelica support.function.special
