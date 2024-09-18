@@ -10,7 +10,8 @@ public function foo
 //                          ^^^^ source.metamodelica constant.language
   output Option<SimCode.Awesome> awesome;
 //^^^^^^ source.metamodelica keyword.control
-//       ^^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica storage.type
+//       ^^^^^^ source.metamodelica storage.type
+//              ^^^^^^^^^^^^^^^ source.metamodelica entity.name.type
 // [...]
 end foo;
 
