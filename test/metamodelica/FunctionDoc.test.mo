@@ -11,7 +11,8 @@ public function foo
   output Option<SimCode.Awesome> awesome;
 //^^^^^^ source.metamodelica keyword.control
 //       ^^^^^^ source.metamodelica storage.type
-//              ^^^^^^^^^^^^^^^ source.metamodelica entity.name.type
+//              ^^^^^^^ source.metamodelica entity.name.type
+//                      ^^^^^^^ source.metamodelica entity.name.type
 // [...]
 end foo;
 

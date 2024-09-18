@@ -29,3 +29,8 @@ type TL = UnorderedMap<Key, Value>;
 //        ^^^^^^^^^^^^ source.metamodelica entity.name.type
 //                     ^^^ source.metamodelica entity.name.type
 //                          ^^^^^ source.metamodelica entity.name.type
+
+x < 1 and x > 0;
+//^ keyword.operator.comparison
+//    ^^^ keyword.control
+//          ^ keyword.operator.comparison
