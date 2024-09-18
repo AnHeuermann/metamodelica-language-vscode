@@ -43,7 +43,7 @@ patterns:
     name: storage.type
 
   ## Polymorphic types
-  - begin: \b(list|tuple|array|Option)\s*<
+  - begin: \b(list|tuple|array|Option)<
     end: '>'
     beginCaptures:
       1:
@@ -51,7 +51,7 @@ patterns:
     patterns:
       - include: '#polymorphic_type'
 
-  - begin: \b(\w+)\s*<
+  - begin: \b(\w+)<
     end : '>'
     beginCaptures:
       1:
@@ -171,7 +171,7 @@ repository:
           - include: '#polymorphic_type'
       - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
         name: storage.type
-      - match: \b([\w\.]+)\b
+      - match: \b(\w+)\b
         name: entity.name.type
 
 scopeName: source.metamodelica
