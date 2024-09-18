@@ -60,7 +60,7 @@ list of all possible snippets to choose from.
 
 There is a dev container available to build and publish the extension.
 See
-[https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation](code.visualstudio.com/api/working-with-extensions/publishing-extension)
+[https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 for more details on the publishing process.
 
 ### Dependencies
