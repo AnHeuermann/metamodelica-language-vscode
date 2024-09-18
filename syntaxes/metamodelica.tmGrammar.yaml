@@ -106,7 +106,7 @@ patterns:
       - include: "source.metamodelica"
 
   # Option literals
-  - match: (SOME\(.*\)|NONE\(\))
+  - match: (SOME\(|NONE\(\))
     name: entity.name.type
 
   # Function calls
