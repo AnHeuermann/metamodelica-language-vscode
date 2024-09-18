@@ -5,10 +5,12 @@ function myMetaModelicaFunction
 //       ^^^^^^^^^^^^^^^^^^^^^^ source.metamodelica entity.name.type
   input list<Real> x;
 //^^^^^ source.metamodelica keyword.control
-//      ^^^^^^^^^^ source.metamodelica storage.type
+//      ^^^^ source.metamodelica storage.type
+//           ^^^^ source.metamodelica storage.type
   output list<Integer> y = {};
 //^^^^^^ source.metamodelica keyword.control
-//       ^^^^^^^^^^^^^ storage.type
+//       ^^^^ source.metamodelica storage.type
+//            ^^^^^^^ source.metamodelica storage.type
 //                       ^ source.metamodelica keyword.operator.assignment
 algorithm
 //<-- source.metamodelica keyword

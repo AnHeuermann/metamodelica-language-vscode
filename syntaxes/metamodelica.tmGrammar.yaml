@@ -27,7 +27,7 @@ patterns:
       1:
         name: comment.line
     patterns:
-      - include: '#enumeration'
+      - include: '#enummember'
 
   ## Type declaration
   - match: \b(type)\b\s+\b(\w+)\b\s+(=)
@@ -42,22 +42,28 @@ patterns:
   - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
     name: storage.type
 
+  ## Polymorphic types
+  - begin: \b(list|tuple|array|Option)\s*<
+    end: '>'
+    beginCaptures:
+      1:
+        name: storage.type
+    patterns:
+      - include: '#polymorphic_type'
+
+  - begin: \b(\w+)\s*<
+    end : '>'
+    beginCaptures:
+      1:
+        name: entity.name.type
+    patterns:
+      - include: '#polymorphic_type'
+
   ## Variability Prefix
   - match: \b(parameter|constant)\b
     name: storage.modifier
   - match: \b(replaceable|redeclare|import)\b
     name: storage.modifier
-  - begin: \b(list|tuple|array|Option)<
-    end: '>'
-    name: storage.type
-  - match: \b(uniontype)\s+(\w+)\s*(".*")*
-    captures:
-      1:
-        name: keyword
-      2:
-        name: entity.name.type
-      3:
-        name: string.quoted.double
 
   # Keywords
   - match: \b(for|if|when|while|in|then|loop|guard|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
@@ -137,7 +143,7 @@ repository:
     match: '\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)'
     name: constant.character.escape
 
-  enumeration:
+  enummember:
     patterns:
       - match: \b(\w+)\s*("([^"]|\\")*(?<!\\)")?
         captures:
@@ -145,7 +151,27 @@ repository:
             name: variable.other.enummember
           2:
             name: comment.line
-      - include: "source.modelica"
+      - include: "source.metamodelica"
 
+  polymorphic_type:
+    patterns:
+      - begin: '\b(list|tuple|array|Option)\s*<'
+        end: '>'
+        beginCaptures:
+          1:
+            name: storage.type
+        patterns:
+          - include: '#polymorphic_type'
+      - begin: '\b(\w+)\s*<'
+        end: '>'
+        beginCaptures:
+          1:
+            name: entity.name.type
+        patterns:
+          - include: '#polymorphic_type'
+      - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
+        name: storage.type
+      - match: \b([\w\.]+)\b
+        name: entity.name.type
 
 scopeName: source.metamodelica
