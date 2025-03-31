@@ -2,7 +2,7 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "MetaModelica, Susan and Modelica language support.",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
