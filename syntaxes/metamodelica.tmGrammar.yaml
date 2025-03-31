@@ -66,7 +66,7 @@ patterns:
     name: storage.modifier
 
   # Keywords
-  - match: \b(for|if|when|while|in|then|loop|guard|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
+  - match: \b(for|if|when|while|in|then|loop|guard|end if|end when|end for|end while|else|elsewhen|break|continue|return|each|elseif|input|output)\b
     name: keyword.control
   - match: \b(matchcontinue|match|local|case|try|end matchcontinue|end match|end try)\b
     name: keyword.control
@@ -78,7 +78,7 @@ patterns:
     name: keyword.operator.arithmetic
   - match: \=|\:\=
     name: keyword.operator.assignment
-  - match: \b(algorithm|equation|protected|public|end|external|encapsulated)\b
+  - match: \b(algorithm|as|equation|protected|public|end|external|encapsulated)\b
     name: keyword
 
   # Support
@@ -86,7 +86,7 @@ patterns:
     name: support.function.mathematical
   - match: \b(scalar|vector|matrix|identity|diagonal|zeros|ones|fill|linspace|transpose|outerProduct|symmetric|cross|skew)\b
     name: support.function.array
-  - match: \b(ceil|div|fill|floor|integer|max|min|mod|rem|pre|noEvent|change|edge|initial|terminal|reinit|sample|smooth|terminate)\b
+  - match: \b(ceil|div|floor|integer|max|min|mod|rem|pre|noEvent|change|edge|initial|terminal|reinit|sample|smooth|terminate)\b
     name: support.function.event
   - match: \b(connect|der|inStream|actualStream|semiLinear|spatialDistribution|getInstanceName|homotopy|delay|assert|ndims|size|cardinality|isPresent)\b
     name: support.function.special
