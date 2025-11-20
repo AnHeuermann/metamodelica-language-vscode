@@ -1,6 +1,6 @@
-[![Test](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml)
-
 # MetaModelica and Susan in Visual Studio Code
+
+[![Test](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml)
 
 This extension adds support for the Modelica, Optimica, MetaModelica and Susan
 languages to Visual Studio Code. This extension is meant to use for developers
@@ -65,9 +65,9 @@ for more details on the publishing process.
 
 ### Dependencies
 
-  - Node.js
-  - VSCode
-  - sh (or translate [yaml2json.sh](./yaml2json.sh) to your shell equivalent)
+* Node.js
+* VSCode
+* sh (or translate [yaml2json.sh](./yaml2json.sh) to your shell equivalent)
 
 ### Build
 
@@ -85,9 +85,10 @@ npm run prebuild
 ### Test
 
 Run the `tmGrammer tests` task:
-  - Open Command Palette (Ctrl+Shift+P)
-  - Type `tasks: Run task`
-  - Choose `tmGrammer tests`
+
+* Open Command Palette (Ctrl+Shift+P)
+* Type `tasks: Run task`
+* Choose `tmGrammer tests`
 
 or run it manually:
 
@@ -98,20 +99,21 @@ npm run test
 ### Build Package
 
 Generate .vsix package file:
+
 ```bash
 npm run build
 ```
 
 ### Publish package
 
-**Visual Studio Marketplace**
+#### Visual Studio Marketplace
 
 ```bash
 npx vsce login <publisher name>
 npx vsce publish
 ```
 
-**Open VSX**
+#### Open VSX
 
 ```bash
 npx ovsx publish metamodelica-<version>.vsix -p <token>

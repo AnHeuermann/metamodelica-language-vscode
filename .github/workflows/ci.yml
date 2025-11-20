@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup npm
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
 
@@ -28,7 +28,7 @@ jobs:
         run: npm run prebuild
 
       - name: Archive tmGrammar files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: tmGrammar.json
           path: syntaxes/*.tmGrammar.json
@@ -39,7 +39,7 @@ jobs:
 
       - name: Archive vsix package
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: metamodelica.vsix
           path: metamodelica-*.vsix
@@ -49,10 +49,10 @@ jobs:
     needs: build
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup npm
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
 
@@ -60,7 +60,7 @@ jobs:
         run: npm install
 
       - name: Download tmGrammar files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: tmGrammar.json
           path: syntaxes
@@ -76,17 +76,17 @@ jobs:
       contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup npm
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
 
       - name: Install dependencies
         run: npm install
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v6
         with:
           name: metamodelica.vsix
 
