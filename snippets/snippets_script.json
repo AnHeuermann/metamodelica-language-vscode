@@ -1,54 +1,5 @@
 {
-  "API function getErrorString": {
-    "prefix": "getErrorString",
-    "body": "getErrorString();",
-    "scope": "source.openmodelica-script"
-  },
-
-  "Minimal Working Example": {
-    "prefix": "loadModel",
-    "body": [
-      "loadModel(Modelica, {\"4.0\"}); getErrorString();",
-      "loadString(\"",
-      "  model M",
-      "    $1",
-      "  end M;",
-      "\"); getErrorString();",
-      "simulate(M); getErrorString();"
-    ],
-    "scope": "source.openmodelica-script"
-  },
-
-  "API function simulate (full)": {
-    "prefix": "simulate",
-    "body": [
-      "simulate($1,",
-      "         startTime = 0.0,",
-      "         stopTime = 1.0,",
-      "         numberOfIntervals = 500,",
-      "         tolerance = 1e-6,",
-      "         method = \"dassl\",",
-      "         fileNamePrefix = \"<default>\",",
-      "         options = \"\",",
-      "         outputFormat = \"mat\",",
-      "         variableFilter = \".*\",",
-      "         cflags = \"\",",
-      "         simflags = \"<default>\");",
-      "getErrorString();"
-    ],
-    "scope": "source.openmodelica-script"
-  },
-
-  "API function simulate": {
-    "prefix": "simulate",
-    "body": [
-      "simulate($1);",
-      "getErrorString();"
-    ],
-    "scope": "source.openmodelica-script"
-  },
-
-  "API function buildModel (full)": {
+    "API function buildModel (full)": {
     "prefix": "buildModel",
     "body": [
       "buildModel($1,",
@@ -100,12 +51,10 @@
     "scope": "source.openmodelica-script"
   },
 
-  "API function loadFile": {
-    "prefix": "loadFile",
-    "body": [
-      "loadFile(\"$1\");",
-      "getErrorString();"
-    ],
+  "API function getErrorString": {
+    "prefix": "getErrorString",
+    "body": "getErrorString();",
+    "description": "Returns current error messages.\nReturns a user-friendly string containing the errors stored in the buffer. With warningsAsErrors=true, it reports warnings as if they were errors.",
     "scope": "source.openmodelica-script"
   },
 
@@ -127,6 +76,43 @@
     ],
     "scope": "source.openmodelica-script"
   },
+  "API function loadFile": {
+    "prefix": "loadFile",
+    "body": [
+      "loadFile(\"$1\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function simulate (full)": {
+    "prefix": "simulate",
+    "body": [
+      "simulate($1,",
+      "         startTime = 0.0,",
+      "         stopTime = 1.0,",
+      "         numberOfIntervals = 500,",
+      "         tolerance = 1e-6,",
+      "         method = \"dassl\",",
+      "         fileNamePrefix = \"<default>\",",
+      "         options = \"\",",
+      "         outputFormat = \"mat\",",
+      "         variableFilter = \".*\",",
+      "         cflags = \"\",",
+      "         simflags = \"<default>\");",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "API function simulate": {
+    "prefix": "simulate",
+    "body": [
+      "simulate($1);",
+      "getErrorString();"
+    ],
+    "scope": "source.openmodelica-script"
+  },
 
   "API function setCommandLineOptions": {
     "prefix": "setCommandLineOptions",
@@ -134,6 +120,21 @@
       "setCommandLineOptions(\"$1\");",
       "getErrorString();"
     ],
+    "scope": "source.openmodelica-script"
+  },
+
+  "Minimal Working Example": {
+    "prefix": "loadModel",
+    "body": [
+      "loadModel(Modelica, {\"4.0\"}); getErrorString();",
+      "loadString(\"",
+      "  model M",
+      "    $1",
+      "  end M;",
+      "\"); getErrorString();",
+      "simulate(M); getErrorString();"
+    ],
+    "description": "Loads a Modelica library.",
     "scope": "source.openmodelica-script"
   }
 }
