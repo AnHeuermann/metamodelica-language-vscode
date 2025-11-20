@@ -78,7 +78,9 @@
 
   "API function getErrorString": {
     "prefix": "getErrorString",
-    "body": "getErrorString();",
+    "body": [
+      "getErrorString();"
+    ],
     "description": "Returns current error messages.\nReturns a user-friendly string containing the errors stored in the buffer. With warningsAsErrors=true, it reports warnings as if they were errors.",
     "scope": "source.openmodelica-script"
   },
@@ -215,7 +217,8 @@
   "API function writeFile": {
     "prefix": "writeFile",
     "body": [
-      "writeFile(\"$1\", data = \"$2\");"
+      "writeFile(\"$1\",",
+      "          data = \"$2\");"
     ],
     "description": "Writes data to a file.",
     "scope": "source.openmodelica-script"
