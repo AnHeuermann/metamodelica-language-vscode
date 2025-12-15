@@ -60,7 +60,7 @@ jobs:
         run: npm install
 
       - name: Download tmGrammar files
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: tmGrammar.json
           path: syntaxes
@@ -86,7 +86,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v7
         with:
           name: metamodelica.vsix
 
