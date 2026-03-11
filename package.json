@@ -8,6 +8,7 @@
   "engines": {
     "vscode": "^1.79.0"
   },
+  "main": "./extension.js",
   "categories": [
     "Programming Languages",
     "Snippets"
@@ -148,7 +149,7 @@
   "scripts": {
     "prebuild": "sh yaml2json.sh",
     "build": "vsce package",
-    "test": "vscode-tmgrammar-test test/**/*.test.*"
+    "test": "node --test test/detectLanguage.test.js && vscode-tmgrammar-test test/**/*.test.mo test/**/*.test.bmo"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.7.1",
