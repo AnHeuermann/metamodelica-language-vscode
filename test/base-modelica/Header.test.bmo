@@ -1,0 +1,5 @@
+// SYNTAX TEST "source.base-modelica" "Base Modelica version header"
+
+//! base 1.2.3
+//<--- source.base-modelica comment.line
+//^^^^^^^^^^^^^^^ source.base-modelica comment.line

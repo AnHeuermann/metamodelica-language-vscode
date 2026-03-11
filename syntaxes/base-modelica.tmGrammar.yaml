@@ -1,8 +1,16 @@
 fileTypes:
-  - mo
-name: Modelica
+  - bmo
+# Detect *.mo files that start with //! base X.Y.Z as Base Modelica
+firstLineMatch: "^//! base \\d+\\.\\d+\\.\\d+"
+name: Base Modelica
 
 patterns:
+  # Base Modelica version header: //! base X.Y.Z
+  # This is required as the first line of every Base Modelica file,
+  # including *.bmo files.
+  - match: ^//!\s+base\s+\S.*$\n?
+    name: comment.line
+
   # Comments
   - begin: /\*
     end: \*/
@@ -16,15 +24,21 @@ patterns:
   - match: \b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b
     name: constant.numeric
 
-  # Storage
+  # Storage types (same as full Modelica)
   - match: \b(Real|Integer|Boolean|String|enumeration|type)\b
     name: storage.type
-  - match: \b(constant|final|parameter|expandable|replaceable|redeclare|constrainedby|import|flow|stream|discrete|connector)\b
+
+  # Storage modifiers
+  # EXCEPTION: Removed compared to full Modelica: expandable, replaceable, redeclare,
+  #            constrainedby, import, connector
+  #            (Base Modelica has no connectors, no replaceable components, no imports)
+  - match: \b(constant|final|parameter|flow|stream|discrete)\b
     name: storage.modifier
 
-  # Keywords
+  # Keywords: qualified names (dotted paths like Modelica.SIunits.Voltage)
   - match: \b\s*([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)([.]([a-zA-Z])(?:([^ ;,:=\($]+)(;)?)?)++\b
     name: keyword
+  # Control flow (same as full Modelica)
   - match: \b(for|if|when|while|in|then|loop|end if|end when|end for|end while|else|elsewhen|break|return|each|elseif|input|output)\b
     name: keyword.control
   - match: \b(and|or|not)\b
@@ -38,7 +52,7 @@ patterns:
   - match: \b(algorithm|equation|protected|public|end|external)\b
     name: keyword
 
-  # Support
+  # Support functions (same as full Modelica)
   - match: \b(acos|asin|atan|atan2|cos|cosh|exp|log|log10|sin|sinh|tan|tanh|abs|sign|sqrt|max|min|product|sum)\b
     name: support.function.mathematical
   - match: \b(scalar|vector|matrix|identity|diagonal|zeros|ones|fill|linspace|transpose|outerProduct|symmetric|cross|skew)\b
@@ -47,12 +61,15 @@ patterns:
     name: support.function.event
   - match: \b(connect|der|inStream|actualStream|semiLinear|spatialDistribution|getInstanceName|homotopy|delay|assert|ndims|size|cardinality|isPresent)\b
     name: support.function.special
-  - match: \b(extends|partial|within)\b
-    name: support.type
+
+  # EXCEPTION: Removed compared to full Modelica: extends, partial, within
+  #            (Base Modelica does not support class inheritance or within clauses)
 
   # Class definitions
-  # Q-IDENT support: class names may be quoted identifiers like 'CauerLowPassSC'
-  - begin: \b(model|class|record|block|package|function)\s+(\w+|'[^']*')\s*("([^"]|\\")*(?<!\\)")?
+  # EXCEPTION: Removed compared to full Modelica: 'class' and 'connector' class kinds
+  #            (Base Modelica only supports model, record, block, package, function, type)
+  # Q-IDENT: class names may be quoted identifiers like 'CauerLowPassSC'
+  - begin: \b(model|record|block|package|function|type)\s+(\w+|'[^']*')\s*("([^"]|\\")*(?<!\\)")?
     beginCaptures:
       1:
         name: keyword
@@ -67,7 +84,12 @@ patterns:
       2:
         name: entity.name.type
     patterns:
-      - include: "source.modelica"
+      - include: "source.base-modelica"
+
+  # Q-IDENT: quoted identifiers used as component/variable names in Base Modelica
+  # e.g. Real 'C1.v', parameter Real 'l1'
+  - match: "'[^']*'"
+    name: variable.other.quoted
 
   # Function calls
   - match: \b(?<!\.)(\w|\w+[\.\w+]*\w)s*\(
@@ -109,12 +131,12 @@ repository:
         end: \)
         patterns:
           - include: '#experiment'
-      - include: "source.modelica"
+      - include: "source.base-modelica"
 
   experiment:
     patterns:
       - match: \b(StartTime|StopTime|Interval|Tolerance)\b
         name: keyword
-      - include: "source.modelica"
+      - include: "source.base-modelica"
 
-scopeName: source.modelica
+scopeName: source.base-modelica

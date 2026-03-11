@@ -1,25 +1,35 @@
-# MetaModelica and Susan in Visual Studio Code
+# Modelica, Base Modelica, MetaModelica, Susan and MOS Scripting in Visual Studio Code
 
-[![Test](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml/badge.svg)](https://github.com/AnHeuermann/modelica-language-vscode/actions/workflows/ci.yml)
+[![CI][badge-test]][ci-workflow]
 
-This extension adds support for the Modelica, Optimica, MetaModelica and Susan
-languages to Visual Studio Code. This extension is meant to use for developers
-of OpenModelica. If you want Modelica support use the great extension [Modelica
-by
-SimplyDanny](https://marketplace.visualstudio.com/items?itemName=SimplyDanny.modelica)
-which is the base for this extensions.
+This extension adds support for the following Modelica and OpenModelica related
+languages to Visual Studio Code:
+
+* [Modelica 3.6][modelica-spec]
+* Base Modelica ([Modelica Change Proposal 031][mcp-031])
+* [Optimica][optimica-doc]
+* [MetaModelica][metamodelica-doc]
+* [Susan Templates][susan-doc]
+* [OpenModelica Scripting API][openmodelica-scripting-api-doc]
 
 ## Features
 
 ### Syntax Highlighting
 
-![Modelica](./images/modelica.png)
+*Modelica Language:*
+![Modelica](./images/modelica-example.png)
 
-![MetaModelica](./images/metamodelica.png)
+*Base Modelica Language:*
+![Base Modelica](./images/base-modelica-example.png)
 
-![Susan](./images/susan-template.png)
+*Meta Modelica language used by OpenModelica:*
+![MetaModelica](./images/metamodelica-example.png)
 
-![OpenModelica Scripting](./images/scripting.png)
+*Susan template language used by OpenModelica:*
+![Susan](./images/susan-template-example.png)
+
+*OpenModelica scripting language used by OpenModelica's *.mos files:*
+![OpenModelica Scripting](./images/openmodelica-scripting-example.png)
 
 ### Snippets
 
@@ -31,7 +41,7 @@ which is the base for this extensions.
 
 ### Install the extension in VS Code
 
-* Download the [VS Code extension file](https://github.com/AnHeuermann/modelica-language-vscode/releases/tag/v0.1.0).
+* Download the [VS Code extension file][releases].
 * Open the command palette using `Ctrl+Shift+P` or `F1`.
 * Type `extensions: Install from VSIX...` in the command palette.
 * Browse to downloaded *.vsix file.
@@ -59,9 +69,7 @@ list of all possible snippets to choose from.
 ## Development
 
 There is a dev container available to build and publish the extension.
-See
-[https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
-for more details on the publishing process.
+See [publishing-extension] for more details on the publishing process.
 
 ### Dependencies
 
@@ -122,4 +130,16 @@ npx ovsx publish metamodelica-<version>.vsix -p <token>
 ## Acknowledgement
 
 This extension is based on the Modelica extension
-[SimplyDanny/modelica-language-vscode](https://github.com/SimplyDanny/modelica-language-vscode).
+[SimplyDanny/modelica-language-vscode][upstream].
+
+[badge-test]: https://github.com/AnHeuermann/metamodelica-language-vscode/actions/workflows/ci.yml/badge.svg
+[ci-workflow]: https://github.com/AnHeuermann/metamodelica-language-vscode/actions/workflows/ci.yml
+[mcp-031]: https://github.com/modelica/ModelicaSpecification/tree/MCP/0031/RationaleMCP/0031
+[metamodelica-doc]: https://github.com/OpenModelica/OpenModelica/blob/master/doc/OpenModelicaMetaProgramming.pdf
+[modelica-spec]: https://specification.modelica.org/maint/3.6/MLS.html
+[openmodelica-scripting-api-doc]: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html
+[optimica-doc]: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/optimization.html
+[publishing-extension]: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation
+[releases]: https://github.com/AnHeuermann/modelica-language-vscode/releases/tag/v0.1.0
+[susan-doc]: https://github.com/OpenModelica/OpenModelica/blob/master/doc/OpenModelicaTemplateProgramming.pdf
+[upstream]: https://github.com/SimplyDanny/modelica-language-vscode

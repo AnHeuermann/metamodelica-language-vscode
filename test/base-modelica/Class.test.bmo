@@ -1,0 +1,32 @@
+// SYNTAX TEST "source.base-modelica" "Class definitions with Q-IDENT"
+
+//! base 0.1.0
+//<--- source.base-modelica comment.line
+//^^^^^^^^^^^^^^^^ source.base-modelica comment.line
+
+package 'CauerLowPassSC'
+//<--- source.base-modelica keyword
+//      ^^^^^^^^^^^^^^^^^ source.base-modelica entity.name.type
+
+  model 'CauerLowPassSC' "Cauer low-pass filter"
+  //<--- source.base-modelica keyword
+  //     ^^^^^^^^^^^^^^^^^ source.base-modelica entity.name.type
+
+    parameter Real 'l1'(min = 0.0) = 1.304 "Filter coefficient l1";
+//  ^^^^^^^^^ source.base-modelica storage.modifier
+//            ^^^^ source.base-modelica storage.type
+//                 ^^^^ source.base-modelica variable.other.quoted
+
+    Real 'C1.v'(fixed = true, start = 0.0) "Voltage";
+//  ^^^^ source.base-modelica storage.type
+//       ^^^^^^ source.base-modelica variable.other.quoted
+
+  equation
+
+  end 'CauerLowPassSC';
+  //<--- source.base-modelica keyword
+  //    ^^^^^^^^^^^^^^ source.base-modelica entity.name.type
+
+end 'CauerLowPassSC';
+//<--- source.base-modelica keyword
+//  ^^^^^^^^^^^^^^^^ source.base-modelica entity.name.type
