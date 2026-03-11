@@ -1,0 +1,34 @@
+// SYNTAX TEST "source.base-modelica" "Base Modelica keywords and types"
+
+//! base 0.1.0
+//<--- source.base-modelica comment.line
+//^^^^^^^^^^^^ source.base-modelica comment.line
+
+model 'Filter'
+  parameter Real 'T' = 1.0;
+//^^^^^^^^^ source.base-modelica storage.modifier
+//          ^^^^ source.base-modelica storage.type
+
+  constant Boolean 'flag' = false;
+//^^^^^^^^ source.base-modelica storage.modifier
+//         ^^^^^^^ source.base-modelica storage.type
+//                          ^^^^^ source.base-modelica constant.language
+
+  input Real 'u';
+//^^^^^ source.base-modelica keyword.control
+  output Real 'y';
+//^^^^^^ source.base-modelica keyword.control
+
+equation
+//<--- source.base-modelica keyword
+
+  if true then
+//   ^^^^ source.base-modelica constant.language
+//        ^^^^ source.base-modelica keyword.control
+    'y' = 'u';
+//      ^ source.base-modelica keyword.operator.assignment
+  end if;
+//^^^^^^ source.base-modelica keyword.control
+
+end 'Filter';
+//<--- source.base-modelica keyword

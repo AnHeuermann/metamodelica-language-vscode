@@ -1,4 +1,4 @@
-template someTemplateFunction(Text message, Context context, builtin.SourceInfo info)
+template myTemplateFunc(Text message, Context context, builtin.SourceInfo info)
 ::=
   match context
   case FUNCTION_CONTEXT(__) then
@@ -15,4 +15,4 @@ template someTemplateFunction(Text message, Context context, builtin.SourceInfo 
       printf("<%message%>\n");
     }
     >>
-end someTemplateFunction;
+end myTemplateFunc;

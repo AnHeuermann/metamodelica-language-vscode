@@ -1,8 +1,8 @@
 {
   "name": "metamodelica",
   "displayName": "MetaModelica",
-  "description": "MetaModelica, Susan and Modelica language support.",
-  "version": "1.4.5",
+  "description": "Modelica, Base Modelica, MetaModelica, Susan and MOS Scripting support.",
+  "version": "1.5.0",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
@@ -14,6 +14,7 @@
   ],
   "keywords": [
     "modelica",
+    "base-modelica",
     "language",
     "metamodelica",
     "susan"
@@ -81,6 +82,20 @@
           ".mos"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "base-modelica",
+        "aliases": [
+          "basemodelica",
+          "BaseModelica",
+          "Base Modelica",
+          "base-modelica"
+        ],
+        "extensions": [
+          ".bmo"
+        ],
+        "firstLine": "^//! base \\d+\\.\\d+\\.\\d+",
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
@@ -108,6 +123,11 @@
         "language": "openmodelica-script",
         "scopeName": "source.openmodelica-script",
         "path": "./syntaxes/script.tmGrammar.json"
+      },
+      {
+        "language": "base-modelica",
+        "scopeName": "source.base-modelica",
+        "path": "./syntaxes/base-modelica.tmGrammar.json"
       }
     ],
     "snippets": [
