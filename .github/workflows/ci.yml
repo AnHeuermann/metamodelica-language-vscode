@@ -28,7 +28,7 @@ jobs:
         run: npm run prebuild
 
       - name: Archive tmGrammar files
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: tmGrammar.json
           path: syntaxes/*.tmGrammar.json
@@ -39,7 +39,7 @@ jobs:
 
       - name: Archive vsix package
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: metamodelica.vsix
           path: metamodelica-*.vsix
@@ -60,7 +60,7 @@ jobs:
         run: npm install
 
       - name: Download tmGrammar files
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: tmGrammar.json
           path: syntaxes
@@ -86,7 +86,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: metamodelica.vsix
 
