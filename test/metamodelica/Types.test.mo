@@ -34,3 +34,8 @@ x < 1 and x > 0;
 //^ keyword.operator.comparison
 //    ^^^ keyword.control
 //          ^ keyword.operator.comparison
+
+ x<=1 or x>0;
+//^^ keyword.operator.comparison
+//    ^^ keyword.control
+//        ^ keyword.operator.comparison

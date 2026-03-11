@@ -43,7 +43,7 @@ patterns:
     name: storage.type
 
   ## Polymorphic types
-  - begin: \b(list|tuple|array|Option)<
+  - begin: \b(list|tuple|array|Option)<(?!=)
     end: '>'
     beginCaptures:
       1:
@@ -51,7 +51,7 @@ patterns:
     patterns:
       - include: '#polymorphic_type'
 
-  - begin: \b(\w+)<
+  - begin: \b(\w+)<(?!=)
     end : '>'
     beginCaptures:
       1:
@@ -72,7 +72,7 @@ patterns:
     name: keyword.control
   - match: \b(and|or|not)\b
     name: keyword.control
-  - match: <|<\=|>|>\=|\=\=|<>
+  - match: <\=|>\=|\=\=|<>|<|>
     name: keyword.operator.comparison
   - match: \+|\-|\.\+|\.\-|\*|\.\*|/|\./|\^
     name: keyword.operator.arithmetic
@@ -159,14 +159,14 @@ repository:
 
   polymorphic_type:
     patterns:
-      - begin: '\b(list|tuple|array|Option)\s*<'
+      - begin: \b(list|tuple|array|Option)\s*<(?!=)
         end: '>'
         beginCaptures:
           1:
             name: storage.type
         patterns:
           - include: '#polymorphic_type'
-      - begin: '\b(\w+)\s*<'
+      - begin: \b(\w+)\s*<(?!=)
         end: '>'
         beginCaptures:
           1:
