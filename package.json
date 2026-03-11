@@ -2,7 +2,7 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "Modelica, Base Modelica, MetaModelica, Susan and MOS Scripting support.",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
