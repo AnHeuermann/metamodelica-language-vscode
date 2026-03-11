@@ -109,6 +109,10 @@ patterns:
       2:
         name: entity.name.type
     patterns:
+      # Docstring may appear on the next line after the class/function header (possibly multi-line)
+      - begin: ^\s*(")
+        end: (?<!\\)"
+        name: comment.line
       - include: "source.metamodelica"
 
   # Option literals
