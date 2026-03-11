@@ -72,7 +72,7 @@ patterns:
     name: keyword.control
   - match: \b(and|or|not)\b
     name: keyword.control
-  - match: <|<\=|>|>\=|\=\=|<>
+  - match: <\=|>\=|\=\=|<>|<|>
     name: keyword.operator.comparison
   - match: \+|\-|\.\+|\.\-|\*|\.\*|/|\./|\^
     name: keyword.operator.arithmetic
