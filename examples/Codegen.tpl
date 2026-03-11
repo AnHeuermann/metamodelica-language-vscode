@@ -1,18 +1,18 @@
-template someTemplateFunction(Text txt, Context ctx, builtin.SourceInfo info)
+template myTemplateFunc(Text message, Context context, builtin.SourceInfo info)
 ::=
-  match ctx
+  match context
   case FUNCTION_CONTEXT(__) then
     <<
     void foo() {
       FILE_INFO info = {<%infoArgs(info)%>};
-      printf("<%txt%>\"\n");
+      printf("<%message%>\"\n");
     }
     >>
   else
     <<
     void foo() {
       printf("Unknown context\n");
-      printf("<%txt%>\n");
+      printf("<%message%>\n");
     }
     >>
-end someTemplateFunction;
+end myTemplateFunc;

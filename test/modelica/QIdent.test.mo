@@ -10,7 +10,7 @@ package 'CauerLowPassSC'
 
   end 'CauerLowPassSC';
   //<--- source.modelica keyword
-  //    ^^^^^^^^^^^^^^ source.modelica entity.name.type
+  //  ^^^^^^^^^^^^^^^^ source.modelica entity.name.type
 
 end 'CauerLowPassSC';
 //<--- source.modelica keyword

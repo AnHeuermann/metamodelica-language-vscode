@@ -22,7 +22,7 @@ languages to Visual Studio Code:
 *Base Modelica Language:*
 ![Base Modelica](./images/base-modelica-example.png)
 
-*Meta Modelica language used by OpenModelica:*
+*MetaModelica language used by OpenModelica:*
 ![MetaModelica](./images/metamodelica-example.png)
 
 *Susan template language used by OpenModelica:*
@@ -140,6 +140,6 @@ This extension is based on the Modelica extension
 [openmodelica-scripting-api-doc]: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html
 [optimica-doc]: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/optimization.html
 [publishing-extension]: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#installation
-[releases]: https://github.com/AnHeuermann/modelica-language-vscode/releases/tag/v0.1.0
+[releases]: https://github.com/AnHeuermann/metamodelica-language-vscode/releases
 [susan-doc]: https://github.com/OpenModelica/OpenModelica/blob/master/doc/OpenModelicaTemplateProgramming.pdf
 [upstream]: https://github.com/SimplyDanny/modelica-language-vscode

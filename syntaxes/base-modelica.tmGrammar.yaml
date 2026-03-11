@@ -92,13 +92,14 @@ patterns:
     name: variable.other.quoted
 
   # Function calls
-  - match: \b(?<!\.)(\w|\w+[\.\w+]*\w)s*\(
+  - match: \b(?<!\.)(\w|\w+[\.\w+]*\w)\s*\(
     name: entity.name.function
 
   # Annotations
   - begin: \b(annotation)\b
     beginCaptures:
-      - name: keyword
+      1:
+        name: keyword
     end: \)\s*;
     patterns:
       - include: '#annotations'
@@ -124,12 +125,13 @@ repository:
   annotations:
     patterns:
       - match: \b(Evaluate|version|versionDate|dateModified|HideResult|singleInstance|mustBeConnected|mayOnlyConnectOnce|Inline|LateInline)\b
-        name: keyword
       - begin: \b(experiment)\s*\(
         beginCaptures:
-          - name: keyword
+          1:
+            name: keyword
         end: \)
         patterns:
+          - include: '#experiment'
           - include: '#experiment'
       - include: "source.base-modelica"
 

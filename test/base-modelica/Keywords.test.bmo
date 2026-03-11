@@ -2,7 +2,7 @@
 
 //! base 0.1.0
 //<--- source.base-modelica comment.line
-//^^^^^^^^^^^^^^^^ source.base-modelica comment.line
+//^^^^^^^^^^^^ source.base-modelica comment.line
 
 model 'Filter'
   parameter Real 'T' = 1.0;
@@ -25,8 +25,8 @@ equation
   if true then
 //   ^^^^ source.base-modelica constant.language
 //        ^^^^ source.base-modelica keyword.control
-    'y' := 'u';
-//      ^^ source.base-modelica keyword.operator.assignment
+    'y' = 'u';
+//      ^ source.base-modelica keyword.operator.assignment
   end if;
 //^^^^^^ source.base-modelica keyword.control
 
