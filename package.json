@@ -2,7 +2,7 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "MetaModelica, Susan and Modelica language support.",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
@@ -131,9 +131,9 @@
     "test": "vscode-tmgrammar-test test/**/*.test.*"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.7.0",
+    "@vscode/vsce": "^3.7.1",
     "js-yaml": "^4.1.1",
-    "ovsx": "^0.10.6",
+    "ovsx": "^0.10.9",
     "vscode-tmgrammar-test": "^0.1.3"
   }
 }
