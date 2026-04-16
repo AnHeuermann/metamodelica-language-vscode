@@ -2,5 +2,18 @@
 .gitignore
 .vscode/
 .vscodeignore
+.claude/
+.devcontainer/
+.github/
 examples/
+src/
+test/
 vsc-extension-quickstart.md
+# Images only needed as remote URLs in README
+images/modelica-example.png
+images/base-modelica-example.png
+images/metamodelica-example.png
+images/susan-template-example.png
+images/openmodelica-scripting-example.png
+images/snippets-editor.png
+images/snippets-command-palette.png

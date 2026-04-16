@@ -17,25 +17,25 @@ languages to Visual Studio Code:
 ### Syntax Highlighting
 
 *Modelica Language:*
-![Modelica](./images/modelica-example.png)
+![Modelica][img-modelica]
 
 *Base Modelica Language:*
-![Base Modelica](./images/base-modelica-example.png)
+![Base Modelica][img-base-modelica]
 
 *MetaModelica language used by OpenModelica:*
-![MetaModelica](./images/metamodelica-example.png)
+![MetaModelica][img-metamodelica]
 
 *Susan template language used by OpenModelica:*
-![Susan](./images/susan-template-example.png)
+![Susan][img-susan]
 
 *OpenModelica scripting language used by OpenModelica's \*.mos files:*
-![OpenModelica Scripting](./images/openmodelica-scripting-example.png)
+![OpenModelica Scripting][img-scripting]
 
 ### Snippets
 
-![snippets-editor](./images/snippets-editor.png)
+![snippets-editor][img-snippets-editor]
 
-![snippets-command-palette](./images/snippets-command-palette.png)
+![snippets-command-palette][img-snippets-palette]
 
 ## Usage
 
@@ -143,3 +143,10 @@ This extension is based on the Modelica extension
 [releases]: https://github.com/AnHeuermann/metamodelica-language-vscode/releases
 [susan-doc]: https://github.com/OpenModelica/OpenModelica/blob/master/doc/OpenModelicaTemplateProgramming.pdf
 [upstream]: https://github.com/SimplyDanny/modelica-language-vscode
+[img-modelica]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/modelica-example.png
+[img-base-modelica]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/base-modelica-example.png
+[img-metamodelica]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/metamodelica-example.png
+[img-susan]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/susan-template-example.png
+[img-scripting]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/openmodelica-scripting-example.png
+[img-snippets-editor]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/snippets-editor.png
+[img-snippets-palette]: https://raw.githubusercontent.com/AnHeuermann/metamodelica-language-vscode/main/images/snippets-command-palette.png
