@@ -96,11 +96,16 @@ patterns:
 repository:
   comments:
     patterns:
-      - begin: /\*
-        end: \*/
-        name: comment.block
+      - include: '#block-comment'
       - match: (//).*$\n?
         name: comment.line
+
+  block-comment:
+    begin: /\*
+    end: \*/
+    name: comment.block
+    patterns:
+      - include: '#block-comment'
 
   types:
     patterns:

@@ -149,7 +149,7 @@
   "scripts": {
     "prebuild": "sh yaml2json.sh",
     "build": "vsce package",
-    "test": "node --test test/detectLanguage.test.js && vscode-tmgrammar-test test/**/*.test.mo test/**/*.test.bmo"
+    "test": "node --test test/detectLanguage.test.js && vscode-tmgrammar-test test/**/*.test.mo test/**/*.test.bmo test/**/*.test.tpl"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.9.0",
