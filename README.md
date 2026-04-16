@@ -28,7 +28,7 @@ languages to Visual Studio Code:
 *Susan template language used by OpenModelica:*
 ![Susan](./images/susan-template-example.png)
 
-*OpenModelica scripting language used by OpenModelica's *.mos files:*
+*OpenModelica scripting language used by OpenModelica's \*.mos files:*
 ![OpenModelica Scripting](./images/openmodelica-scripting-example.png)
 
 ### Snippets
