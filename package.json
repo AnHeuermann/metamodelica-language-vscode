@@ -25,7 +25,7 @@
     "type": "git",
     "url": "https://github.com/AnHeuermann/modelica-language-vscode.git"
   },
-  "icon": "images/Modelica_Language_marging.jpg",
+  "icon": "images/Modelica_Language_margin.jpg",
   "bugs": "https://github.com/AnHeuermann/modelica-language-vscode/issues",
   "contributes": {
     "languages": [
