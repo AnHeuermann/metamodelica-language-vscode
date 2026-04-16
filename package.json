@@ -2,7 +2,7 @@
   "name": "metamodelica",
   "displayName": "MetaModelica",
   "description": "Modelica, Base Modelica, MetaModelica, Susan and MOS Scripting support.",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "publisher": "AnHeuermann",
   "license": "See LICENSE.txt",
   "engines": {
@@ -152,9 +152,9 @@
     "test": "node --test test/detectLanguage.test.js && vscode-tmgrammar-test test/**/*.test.mo test/**/*.test.bmo"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.7.1",
+    "@vscode/vsce": "^3.9.0",
     "js-yaml": "^4.1.1",
-    "ovsx": "^0.10.9",
+    "ovsx": "^0.10.11",
     "vscode-tmgrammar-test": "^0.1.3"
   }
 }
