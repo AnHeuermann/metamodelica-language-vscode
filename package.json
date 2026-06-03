@@ -152,9 +152,9 @@
     "test": "node --test test/detectLanguage.test.js && vscode-tmgrammar-test test/**/*.test.mo test/**/*.test.bmo test/**/*.test.tpl"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.9.0",
-    "js-yaml": "^4.1.1",
-    "ovsx": "^0.10.11",
+    "@vscode/vsce": "^3.9.1",
+    "js-yaml": "^4.2.0",
+    "ovsx": "^1.0.0",
     "vscode-tmgrammar-test": "^0.1.3"
   }
 }
