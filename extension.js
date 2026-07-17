@@ -3,6 +3,7 @@
 
 const vscode = require('vscode');
 const { detectMoFileLanguage } = require('./src/detectLanguage');
+const { pathCompletionProvider } = require('./src/pathCompletionProvider');
 
 /**
  * Detect whether a .mo file is Base Modelica, MetaModelica, or Modelica and set the language accordingly.
@@ -34,6 +35,15 @@ function activate(context) {
     // Process newly opened documents
     context.subscriptions.push(
         vscode.workspace.onDidOpenTextDocument(detectMoLanguage)
+    );
+
+    // Suggest files and directories inside path arguments of scripting API calls.
+    context.subscriptions.push(
+        vscode.languages.registerCompletionItemProvider(
+            { language: 'openmodelica-script' },
+            pathCompletionProvider,
+            '"', '/'
+        )
     );
 }
 
