@@ -1,0 +1,37 @@
+// COMPLETION TEST "Path completion in OpenModelica scripting API calls"
+// A '^' marks the cursor column, followed by the expected completion:
+// "<function> <file|folder> <extensions|any>", or "none" for no completion.
+
+loadFile("");
+//        ^ loadFile file .mo
+
+cd("");
+//  ^ cd folder any
+
+importFMU(fullPath = "");
+//                    ^ importFMU file .fmu
+
+readFile("");
+//        ^ readFile file any
+
+readSimulationResultVars("");
+//                        ^ readSimulationResultVars file .mat,.csv
+
+runScript("scripts/su");
+//                   ^ runScript file .mos
+
+// The innermost call wins.
+loadFile(readFile(""));
+//                 ^ readFile file any
+
+// No string argument under the cursor.
+remove();
+//     ^ none
+
+// Not a path taking function.
+setCommandLineOptions("");
+//                     ^ none
+
+// Inside a comment.
+// loadFile("
+//           ^ none
