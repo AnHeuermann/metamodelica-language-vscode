@@ -6,7 +6,6 @@
 .devcontainer/
 .github/
 examples/
-src/
 test/
 vsc-extension-quickstart.md
 # Images only needed as remote URLs in README

@@ -2,6 +2,13 @@
 
 All notable changes to the "MetaModelica" extension will be documented in this file.
 
+## [1.6.1] - 2026-07-23
+
+- Fixed the extension failing to activate in the packaged build: `src/` was
+  excluded from the VSIX, so `extension.js` could not load its runtime modules.
+  This broke path completion and `.mo` language auto-detection while declarative
+  features (snippets, syntax highlighting) kept working
+
 ## [1.6.0] - 2026-07-17
 
 - Path completion for [OpenModelica scripting API][om-scripting-api] calls:
