@@ -153,8 +153,8 @@
   },
   "devDependencies": {
     "@vscode/vsce": "^3.9.2",
-    "js-yaml": "^5.2.1",
-    "ovsx": "^1.0.2",
+    "js-yaml": "^5.4.1",
+    "ovsx": "^1.1.1",
     "vscode-tmgrammar-test": "^0.1.3"
   }
 }
